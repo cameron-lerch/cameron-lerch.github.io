@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safety-Critical Ergodic Exploration · Cameron Lerch</title>
+  <meta name="description" content="Collision-free search trajectories for single drones and drone teams in cluttered, unknown environments.">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,600|Playfair+Display:700&display=swap" rel="stylesheet">
+  <link href="../lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="../css/custom.css" rel="stylesheet">
+  <link href="../css/project.css" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/brand/favicon-32.png">
+  <link rel="apple-touch-icon" href="../images/brand/apple-touch-icon.png">
+</head>
+<body>
+
+  <nav class="project-nav">
+    <div class="inner">
+      <a href="../index.html" class="brand" aria-label="Cameron Lerch home">
+        <span class="brand-mark">CL</span><span class="brand-name">Cameron Lerch</span>
+      </a>
+      <a href="../index.html#demos" class="back"><i class="ion-ios-arrow-back"></i>&nbsp; All projects</a>
+    </div>
+  </nav>
+
+  <header class="project-hero">
+    <div class="inner">
+      <div class="demo-tag">Research · IEEE ICRA 2023</div>
+      <h1>Safety-Critical Ergodic Exploration</h1>
+      <p class="lede">Collision-free search trajectories for single drones and drone teams in cluttered, unknown environments.</p>
+      <p class="authors"><b>C. Lerch</b>, D. Dong, I. Abraham</p>
+      <div class="demo-links">
+          <a href="https://github.com/ialab-yale/SafetyCriticalErgodicExploration" target="_blank" rel="noopener"><i class="ion-social-github"></i> Code</a>
+          <a href="https://arxiv.org/abs/2211.04310" target="_blank" rel="noopener"><i class="ion-document-text"></i> Paper</a>
+          <a href="../docs/posters/ICRA2023-Safety-Critical-Ergodic-Exploration.pdf" target="_blank" rel="noopener"><i class="ion-image"></i> Poster</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="project-body">
+    <!-- Video: put a YouTube video ID in data-youtube="..." (leave empty for the placeholder). -->
+    <div class="project-media"><div class="demo-media" data-youtube=""></div></div>
+
+    <div class="project-grid">
+      <div>
+      <h2>Overview</h2>
+      <p>Robots used for search and exploration need to cover a space thoroughly <i>and</i> never collide with
+              anything along the way, and guaranteeing both at once is hard in tight, cluttered environments. This work generates
+              search trajectories that are guaranteed to be safe by building discrete control barrier functions (DCBFs) directly
+              into ergodic trajectory optimization.</p>
+      <h2>How it works</h2>
+      <ul>
+              <li><b>Ergodic trajectory optimization</b> plans continuous exploratory trajectories whose time-averaged behavior matches
+                  a target information distribution, so the robot spends more time where there is more to find and is guaranteed to cover the space.</li>
+              <li><b>Discrete control barrier functions</b> encode collision avoidance as constraints that keep the robot inside the safe set
+                  at every time step of the plan.</li>
+              <li>Combining the two produces trajectories that remain exploratory while being provably collision-free, for single robots
+                  and for teams of robots.</li>
+            </ul>
+      <h2>Experiments</h2>
+      <p>We validated the approach in simulation and in real-world experiments on single- and multi-drone platforms,
+              showing safe and effective exploration in cluttered environments.</p>
+      <h2>My role</h2>
+      <p>First author. <span class="todo">[What you built: e.g. the DCBF formulation, codebase, drone experiments, multi-agent extension.]</span></p>
+      </div>
+      <aside class="project-facts">
+      <h3>Venue</h3><p>IEEE International Conference on Robotics and Automation (ICRA), London, 2023</p>
+      <h3>Lab</h3><p><a href="https://ialab.yale.edu/" target="_blank" rel="noopener">CoCuRo Lab (formerly IA Lab), Yale</a></p>
+      <h3>Tools</h3><p>Python · ROS · Linux · quadrotor drones</p>
+      <h3>Topics</h3><p>Ergodic search · control barrier functions · multi-robot planning</p>
+      </aside>
+    </div>
+
+      <h2>Gallery</h2>
+      <!-- Add images as <figure><img src="../images/projects/..."><figcaption>...</figcaption></figure> -->
+      <div class="gallery">
+        <figure><img src="https://raw.githubusercontent.com/ialab-yale/SafetyCriticalErgodicExploration/main/experiments/multi-agent/Multi1.jpg" alt="Multi-agent experiment" loading="lazy"><figcaption>Multi-agent experiment</figcaption></figure>
+        <div class="gallery-placeholder">Add: More figures, drone photos, or experiment stills</div>
+      </div>
+  </main>
+
+  <footer class="project-footer">
+    <a href="../index.html#demos">← Back to all projects</a> &nbsp;·&nbsp;
+    <a href="mailto:cameron.lerch@gmail.com">cameron.lerch@gmail.com</a>
+  </footer>
+
+  <script src="../js/site.js"></script>
+</body>
+</html>

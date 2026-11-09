@@ -287,3 +287,12 @@
 
 /* Inline links in body copy (template sets a:visited to white) */
 .first-intro a, .first-intro a:visited { color: var(--gold); }
+
+/* Inline SVG icon in the skills carousel (matches the 44px ionicons) */
+.services-block .svc-icon { width: 44px; height: 44px; color: var(--gold); display: block; margin: 0 auto; }
+
+/* Demo cards link to project pages */
+.demo-body h4 a.demo-title, .demo-body h4 a.demo-title:visited { color: var(--ink); text-decoration: none; }
+.demo-body h4 a.demo-title:hover { color: var(--gold); }
+.demo-links a.demo-more, .demo-links a.demo-more:visited { background: var(--gold); border-color: var(--gold); color: #fff; }
+.demo-links a.demo-more:hover { background: var(--gold-light); border-color: var(--gold-light); color: #fff; }

@@ -148,7 +148,17 @@
       <div class="services-carousel owl-theme">
 
         <div class="services-block">
-          <i class="ion-android-plane"></i>
+          <svg class="svc-icon" viewBox="0 0 48 48" aria-hidden="true">
+            <line x1="24" y1="4" x2="24" y2="11" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="24" cy="4.5" r="3" fill="currentColor"/>
+            <rect x="9" y="11" width="30" height="24" rx="6" fill="currentColor"/>
+            <circle cx="18" cy="22" r="3.6" fill="#f7f7f7"/>
+            <circle cx="30" cy="22" r="3.6" fill="#f7f7f7"/>
+            <rect x="17" y="29" width="14" height="2.6" rx="1.3" fill="#f7f7f7"/>
+            <rect x="3" y="18" width="4" height="10" rx="2" fill="currentColor"/>
+            <rect x="41" y="18" width="4" height="10" rx="2" fill="currentColor"/>
+            <rect x="15" y="37" width="18" height="8" rx="3" fill="currentColor"/>
+          </svg>
           <span>Robotics</span>
           <p class="separator">ROS 1/2, Viam, multi-robot planning, trajectory optimization, and control barrier functions on real drone swarms and robot arms.</p>
         </div>
@@ -216,14 +226,14 @@
           <div class="edu-logo"><img src="images/logos/lee-summit-west.svg" alt="Lee's Summit West High School"></div>
           <h4>Lee's Summit West</h4>
           <p>High School Diploma</p>
-          <p><span class="todo">[years]</span> – 2014</p>
+          <p>2010 – 2014</p>
           <p class="hint">View details →</p>
         </div>
 
         <div class="edu-card" data-modal="staModal" tabindex="0" role="button">
           <div class="edu-logo"><img src="images/logos/sta-logo-dark.png" alt="Summit Technology Academy"></div>
           <h4>Summit Technology Academy</h4>
-          <p>Engineering Emphasis</p>
+          <p>PLTW Engineering</p>
           <p>2012 – 2014</p>
           <p class="hint">View details →</p>
         </div>
@@ -285,6 +295,9 @@
             <div class="col-lg-3 col-md-6 portfolio-thumbnail all work" data-modal="earlyEngineeringModal">
               <img src="images/tiles/early-engineering.png" alt="Early engineering work: CAD, prototyping, and fabrication">
             </div>
+            <div class="col-lg-3 col-md-6 portfolio-thumbnail all teaching leadership" data-modal="outreachModal">
+              <img src="images/tiles/stem-outreach.png" alt="STEM Outreach and Mentoring: Funbotics, Yale Pathways, FIRST">
+            </div>
             <div class="col-lg-3 col-md-6 portfolio-thumbnail all awards" data-modal="nsfModal">
               <img src="images/tiles/nsf-grfp.png" alt="NSF Graduate Research Fellowship 2019">
             </div>
@@ -333,11 +346,12 @@
           <div class="demo-media" data-youtube=""></div>
           <div class="demo-body">
             <div class="demo-tag">Research · ICRA 2023</div>
-            <h4>Safety-Critical Ergodic Exploration</h4>
+            <h4><a class="demo-title" href="projects/safety-critical-ergodic-exploration.html">Safety-Critical Ergodic Exploration</a></h4>
             <p>Collision-free search trajectories for single drones and drone teams in cluttered environments. Discrete control barrier
                functions are built into ergodic trajectory optimization, so the robots cover a space thoroughly while staying provably safe.
                Validated in simulation and on real quadrotors.</p>
             <div class="demo-links">
+              <a class="demo-more" href="projects/safety-critical-ergodic-exploration.html"><i class="ion-arrow-right-c"></i> Details</a>
               <a href="https://github.com/ialab-yale/SafetyCriticalErgodicExploration" target="_blank" rel="noopener"><i class="ion-social-github"></i> Code</a>
               <a href="https://arxiv.org/abs/2211.04310" target="_blank" rel="noopener"><i class="ion-document-text"></i> Paper</a>
               <a href="docs/posters/ICRA2023-Safety-Critical-Ergodic-Exploration.pdf" target="_blank" rel="noopener"><i class="ion-image"></i> Poster</a>
@@ -353,10 +367,11 @@
           </div>
           <div class="demo-body">
             <div class="demo-tag">Personal project · Viam</div>
-            <h4>ViamGreeter</h4>
+            <h4><a class="demo-title" href="projects/viam-greeter.html">ViamGreeter</a></h4>
             <p>An autonomous trade-show booth greeter built on Viam. A fixed webcam and a pre-trained person detector track passersby,
                and an SO-101 robotic arm turns toward each one, points, beckons, and waves. Runs on both a simulated and a real arm.</p>
             <div class="demo-links">
+              <a class="demo-more" href="projects/viam-greeter.html"><i class="ion-arrow-right-c"></i> Details</a>
               <a href="https://github.com/cameron-lerch/ViamGreeter" target="_blank" rel="noopener"><i class="ion-social-github"></i> Code</a>
             </div>
           </div>
@@ -366,10 +381,11 @@
           <div class="demo-media" data-youtube=""></div>
           <div class="demo-body">
             <div class="demo-tag">Personal project · Viam</div>
-            <h4>Gripper Touch-Off</h4>
+            <h4><a class="demo-title" href="projects/gripper-touch-off.html">Gripper Touch-Off</a></h4>
             <p>A Viam module that finds where a gripper's fingertips really are by touching them to the table, the way machinists set up a tool,
                then corrects the gripper's frame in the machine config so motion planning stops driving fingertips into the table.</p>
             <div class="demo-links">
+              <a class="demo-more" href="projects/gripper-touch-off.html"><i class="ion-arrow-right-c"></i> Details</a>
               <a href="https://github.com/cameron-lerch/GripperTouchOff" target="_blank" rel="noopener"><i class="ion-social-github"></i> Code</a>
             </div>
           </div>
@@ -379,9 +395,10 @@
           <div class="demo-media" data-youtube=""></div>
           <div class="demo-body">
             <div class="demo-tag">Personal project · Viam</div>
-            <h4>ViamObjectReconstruction</h4>
+            <h4><a class="demo-title" href="projects/viam-object-reconstruction.html">ViamObjectReconstruction</a></h4>
             <p class="todo">[One or two sentences on what this project does.]</p>
             <div class="demo-links">
+              <a class="demo-more" href="projects/viam-object-reconstruction.html"><i class="ion-arrow-right-c"></i> Details</a>
               <a class="soon"><i class="ion-social-github"></i> Code coming soon</a>
             </div>
           </div>
@@ -391,10 +408,11 @@
           <div class="demo-media" data-youtube=""></div>
           <div class="demo-body">
             <div class="demo-tag">Research · ICRA 2024</div>
-            <h4>Energy-Aware Ergodic Search</h4>
-            <p>Continuous, long-duration exploration for multi-agent teams with battery constraints. Agents plan coverage while
-               accounting for their remaining energy and when to recharge.</p>
+            <h4><a class="demo-title" href="projects/energy-aware-ergodic-search.html">Energy-Aware Ergodic Search</a></h4>
+            <p>Continuous exploration for battery-powered multi-agent teams. A battery model predicts each robot's state of charge,
+               and planning trades battery use against coverage so at least one agent is always exploring.</p>
             <div class="demo-links">
+              <a class="demo-more" href="projects/energy-aware-ergodic-search.html"><i class="ion-arrow-right-c"></i> Details</a>
               <a href="https://arxiv.org/abs/2310.09470" target="_blank" rel="noopener"><i class="ion-document-text"></i> Paper</a>
             </div>
           </div>
@@ -404,10 +422,11 @@
           <div class="demo-media" data-youtube=""></div>
           <div class="demo-body">
             <div class="demo-tag">Research · RSS 2024</div>
-            <h4>Stein Variational Ergodic Search</h4>
+            <h4><a class="demo-title" href="projects/stein-variational-ergodic-search.html">Stein Variational Ergodic Search</a></h4>
             <p>Uses Stein variational inference to generate a diverse set of ergodic search trajectories at once, so a planner can choose among
                many good exploration strategies instead of committing to a single local optimum.</p>
             <div class="demo-links">
+              <a class="demo-more" href="projects/stein-variational-ergodic-search.html"><i class="ion-arrow-right-c"></i> Details</a>
               <a href="https://arxiv.org/abs/2406.11767" target="_blank" rel="noopener"><i class="ion-document-text"></i> Paper</a>
             </div>
           </div>
@@ -417,10 +436,11 @@
           <div class="demo-media" data-youtube=""></div>
           <div class="demo-body">
             <div class="demo-tag">Work · Oxylus Energy</div>
-            <h4>Multi-Station Instrument Control System</h4>
+            <h4><a class="demo-title" href="projects/oxylus-instrument-control.html">Multi-Station Instrument Control System</a></h4>
             <p>A modular PyQt5 application for running many lab stations at once: per-station configuration, dynamic USB device mapping,
                live sensor polling and telemetry, and validated, synchronized test schedules.</p>
             <div class="demo-links">
+              <a class="demo-more" href="projects/oxylus-instrument-control.html"><i class="ion-arrow-right-c"></i> Details</a>
               <a href="https://oxylusenergy.com/" target="_blank" rel="noopener"><i class="ion-earth"></i> Oxylus Energy</a>
             </div>
           </div>
@@ -430,10 +450,11 @@
           <div class="demo-media" data-youtube=""></div>
           <div class="demo-body">
             <div class="demo-tag">Work · Oxylus Energy</div>
-            <h4>Electrolysis Stack Enclosure</h4>
+            <h4><a class="demo-title" href="projects/electrolysis-enclosure.html">Electrolysis Stack Enclosure</a></h4>
             <p>A sealed enclosure for a large-scale electrolysis stack with fume-hood exhaust, designed using OSHA industrial ventilation
                guidance to dilute and remove carbon monoxide.</p>
             <div class="demo-links">
+              <a class="demo-more" href="projects/electrolysis-enclosure.html"><i class="ion-arrow-right-c"></i> Details</a>
               <a href="https://oxylusenergy.com/" target="_blank" rel="noopener"><i class="ion-earth"></i> Oxylus Energy</a>
             </div>
           </div>
@@ -443,10 +464,11 @@
           <div class="demo-media" data-youtube=""></div>
           <div class="demo-body">
             <div class="demo-tag">Research · Computational physics</div>
-            <h4>Molecular Dynamics of Glasses &amp; Soft Particles</h4>
+            <h4><a class="demo-title" href="projects/molecular-dynamics-simulations.html">Molecular Dynamics of Glasses &amp; Soft Particles</a></h4>
             <p>LAMMPS simulations of bulk metallic glasses (glass-forming ability and rearrangements under cyclic shear) and of deformable
                particles clogging in hopper flows, run as parallelized workflows on HPC clusters.</p>
             <div class="demo-links">
+              <a class="demo-more" href="projects/molecular-dynamics-simulations.html"><i class="ion-arrow-right-c"></i> Details</a>
               <a href="https://jamming.research.yale.edu/" target="_blank" rel="noopener"><i class="ion-earth"></i> O'Hern Group</a>
             </div>
           </div>
@@ -569,9 +591,9 @@
 
       <p class="first-intro">
         Robotics started for me in high school with <a href="https://www.teamtitanium.org/" target="_blank" rel="noopener">FRC Team 1986, Team Titanium</a>,
-        in Lee's Summit, Missouri. I was the team's driver and team captain during both my junior and senior years, and I was named a
-        2014 FIRST Dean's List Finalist.
-        <span class="todo">[Optional: your role on the build and a highlight or two.]</span>
+        in Lee's Summit, Missouri. I spent four seasons on the team from 2010 to 2014. For the first two I was on the mechanical subteam,
+        designing and fabricating our competition robots. For the last two I was team captain and the robot's driver. I also volunteered more than
+        1,000 hours mentoring younger students through FIRST programs and summer camps, and I was named a 2014 FIRST Dean's List Finalist.
       </p>
 
       <!-- One card per robot. Put the YouTube ID in data-youtube, and swap the title/description. -->
@@ -579,17 +601,33 @@
         <div class="demo-card">
           <div class="demo-media" data-youtube=""></div>
           <div class="demo-body">
-            <div class="demo-tag">2013 season · Ultimate Ascent</div>
+            <div class="demo-tag">2011 season · Logo Motion · Mechanical subteam</div>
             <h4 class="todo">[Robot name]</h4>
-            <p class="todo">[What the robot did and what you worked on.]</p>
+            <p class="todo">[What the robot did and what you worked on. Add CAD screenshots, reveal video, and match videos.]</p>
           </div>
         </div>
         <div class="demo-card">
           <div class="demo-media" data-youtube=""></div>
           <div class="demo-body">
-            <div class="demo-tag">2014 season · Aerial Assist</div>
+            <div class="demo-tag">2012 season · Rebound Rumble · Mechanical subteam</div>
             <h4 class="todo">[Robot name]</h4>
-            <p class="todo">[What the robot did and what you worked on.]</p>
+            <p class="todo">[What the robot did and what you worked on. Add CAD screenshots, reveal video, and match videos.]</p>
+          </div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-media" data-youtube=""></div>
+          <div class="demo-body">
+            <div class="demo-tag">2013 season · Ultimate Ascent · Captain &amp; driver</div>
+            <h4 class="todo">[Robot name]</h4>
+            <p class="todo">[What the robot did and what you worked on. Add CAD screenshots, reveal video, and match videos.]</p>
+          </div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-media" data-youtube=""></div>
+          <div class="demo-body">
+            <div class="demo-tag">2014 season · Aerial Assist · Captain &amp; driver</div>
+            <h4 class="todo">[Robot name]</h4>
+            <p class="todo">[What the robot did and what you worked on. Add CAD screenshots, reveal video, and match videos.]</p>
           </div>
         </div>
       </div>
@@ -759,7 +797,7 @@
         <li>Undergraduate researcher with Dr. Thomas Vojta, Dr. Julia Medvedeva, and Dr. Daniel Fischer</li>
         <li>Peer Learning Assistant for Engineering Physics I &amp; II (2016 – 2019)</li>
         <li>Sigma Pi Sigma Physics Honor Society; Society of Physics Students</li>
-        <li>S&amp;T Astronomical Research Society, former Vice President</li>
+        <li>S&amp;T Astronomical Research Society, co-founder and former Vice President</li>
       </ul>
 
       <p><a href="https://physics.mst.edu/" target="_blank" rel="noopener">Missouri S&amp;T Department of Physics</a></p>
@@ -770,14 +808,15 @@
     <div class="modal-content">
       <span class="close" aria-label="Close">&times;</span>
       <h2 id="lswModalTitle">Lee's Summit West High School</h2>
-      <div class="modal-meta"><span class="todo">[years]</span> – 2014 &nbsp;•&nbsp; Lee's Summit, MO</div>
+      <div class="modal-meta">2010 – 2014 &nbsp;•&nbsp; Lee's Summit, MO</div>
 
       <h5>Activities &amp; honors</h5>
       <ul>
-        <li>FIRST Robotics Competition Team 1986, Team Titanium: Driver and Team Captain (junior and senior years)</li>
+        <li>FIRST Robotics Competition Team 1986, Team Titanium (2010 – 2014): mechanical subteam for two seasons, then Team Captain and Driver for two</li>
+        <li>Volunteered 1,000+ hours mentoring younger students through FIRST programs and summer camps</li>
         <li>2014 FIRST Dean's List Finalist</li>
         <li>National Honor Society</li>
-        <li>Summit Technology Academy, engineering emphasis (junior and senior years)</li>
+        <li>Completed the Project Lead the Way (PLTW) engineering curriculum, with specialty courses taken off campus at Summit Technology Academy during junior and senior years</li>
         <li>Early college coursework in electronics and mathematics</li>
       </ul>
       <p><a href="#first-robotics" class="smoothScroll" data-close-modal>See my FIRST robots →</a></p>
@@ -788,11 +827,30 @@
     <div class="modal-content">
       <span class="close" aria-label="Close">&times;</span>
       <h2 id="staModalTitle">Summit Technology Academy</h2>
-      <div class="modal-meta">2012 – 2014 &nbsp;•&nbsp; Lee's Summit, MO</div>
-      <p>I spent my last two years of high school at Summit Technology Academy, the Lee's Summit R-7 school district's
-         advanced technical program, with an emphasis in engineering coursework alongside my diploma from Lee's Summit West.</p>
-      <p class="todo">[Optional: notable courses, projects, or certifications from STA.]</p>
-      <p><a href="https://sta.lsr7.org/" target="_blank" rel="noopener">Summit Technology Academy</a></p>
+      <div class="modal-meta">2012 – 2014 &nbsp;•&nbsp; Project Lead the Way (PLTW) Engineering &nbsp;•&nbsp; Lee's Summit, MO</div>
+      <p>For my junior and senior years I spent half of each school day at Summit Technology Academy, a career-focused academy
+         that hosts juniors and seniors from more than 45 high schools. There I completed the specialty courses of the Project Lead the Way (PLTW)
+         engineering curriculum. The half-day schedule let us finish more coursework in less time than a traditional high school schedule.</p>
+
+      <h5>Junior year</h5>
+      <ul>
+        <li><b>Computer Integrated Manufacturing (CIM)</b></li>
+        <li><b>Digital Electronics (DE)</b></li>
+      </ul>
+
+      <h5>Senior year</h5>
+      <ul>
+        <li><b>Engineering Capstone</b> (fall semester; normally a full-year course). Included an internship with the city, where we learned how to design
+            a wastewater treatment plant and completed coursework in fluid dynamics.</li>
+        <li><b>Engineering Design and Development (EDD)</b> (spring semester). Designed, developed, and engineered a product from concept to fabrication,
+            then presented it to a panel of engineers from firms including Burns &amp; McDonnell, Garmin, Honeywell, and Black &amp; Veatch, as well as city engineers.
+            <span class="todo">[Optional: what the product was.]</span></li>
+      </ul>
+
+      <p>STA's programs have been recognized by President Obama, who in a July 2013 speech
+         <a href="https://www.kbia.org/politics/2013-07-24/obama-praises-missouri-innovation-campus-program" target="_blank" rel="noopener">praised the Missouri Innovation Campus program</a>
+         that STA is part of as a model for other schools.</p>
+      <p><a href="https://sta.lsr7.org/about" target="_blank" rel="noopener">About Summit Technology Academy</a></p>
     </div>
   </div>
 
@@ -809,6 +867,7 @@
             schedule validation for laboratory automation.</li>
         <li>Designed and fabricated a sealed large-scale electrolysis stack enclosure with fume-hood exhaust, applying OSHA industrial
             ventilation guidance to ensure effective CO dilution and removal.</li>
+        <li>The control application now runs across twelve experimental stations and is used daily by six full-time employees.</li>
       </ul>
       <p>
         <a href="https://oxylusenergy.com/" target="_blank" rel="noopener">Oxylus Energy website</a> &nbsp;·&nbsp;
@@ -927,7 +986,7 @@
       <h2 id="peerLearningModalTitle">Peer Learning Assistant, Missouri S&amp;T</h2>
       <div class="modal-meta">August 2016 – May 2019 &nbsp;•&nbsp; Rolla, MO</div>
       <ul>
-        <li>Worked alongside faculty during LEAD sessions to guide students through course material.</li>
+        <li>Led twice-weekly group tutoring sessions in introductory physics through Missouri S&amp;T's LEAD program, working alongside faculty to guide students through course material.</li>
         <li>Tutored students from every discipline enrolled in Engineering Physics I and Physics II.</li>
         <li>Demonstrated and explained fundamental concepts to help students learn how to approach a problem.</li>
         <li>Completed professional development training in communication, conflict resolution, and goal setting.</li>
@@ -963,6 +1022,23 @@
         <li>Reverse-engineered an industrial blender, modeling each part from caliper measurements in Autodesk Inventor.</li>
         <li>Produced an annotated exploded view for the product's instruction manual.</li>
       </ul>
+    </div>
+  </div>
+
+  <div id="outreachModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="outreachModalTitle">
+    <div class="modal-content">
+      <span class="close" aria-label="Close">&times;</span>
+      <h2 id="outreachModalTitle">STEM Outreach &amp; Mentoring</h2>
+      <div class="modal-meta">2010 – 2025</div>
+      <ul>
+        <li><b>Funbotics (Yale):</b> volunteered teaching elementary school students CAD and helping them build 3D printers.</li>
+        <li><b>Yale Pathways:</b> took part in Yale's STEM outreach program for local students.</li>
+        <li><b>Drone demonstrations:</b> created live multi-drone demos for students visiting the lab.</li>
+        <li><b>Research mentoring:</b> mentored incoming researchers in the lab.</li>
+        <li><b>Astronomy nights:</b> helped lead public observing events for community members and their families as co-founder of the Missouri S&amp;T Astronomical Research Society.</li>
+        <li><b>FIRST:</b> volunteered more than 1,000 hours mentoring younger students through FIRST programs and summer camps.</li>
+      </ul>
+      <p class="todo">[Optional: dates, links, or photos for any of these.]</p>
     </div>
   </div>
 
@@ -1011,8 +1087,9 @@
     <div class="modal-content">
       <span class="close" aria-label="Close">&times;</span>
       <h2 id="astroModalTitle">S&amp;T Astronomical Research Society</h2>
-      <div class="modal-meta">Vice President &nbsp;•&nbsp; <span class="todo">[dates]</span></div>
-      <p class="todo">[What the society does and what you led as VP.]</p>
+      <div class="modal-meta">Co-founder &amp; Vice President &nbsp;•&nbsp; Missouri S&amp;T &nbsp;•&nbsp; <span class="todo">[dates]</span></div>
+      <p>Co-founded the Missouri S&amp;T Astronomical Research Society and helped lead public observing events for community members and their families.</p>
+      <p class="todo">[Anything else you led as VP.]</p>
     </div>
   </div>
 
@@ -1020,9 +1097,13 @@
     <div class="modal-content">
       <span class="close" aria-label="Close">&times;</span>
       <h2 id="firstModalTitle">FIRST Robotics Competition: Team 1986, Team Titanium</h2>
-      <div class="modal-meta">Driver &amp; Team Captain &nbsp;•&nbsp; Junior and senior years (2013 &amp; 2014 seasons) &nbsp;•&nbsp; Lee's Summit, MO</div>
-      <p>I drove the robot in competition and captained Team Titanium for two seasons, and I was named a 2014 FIRST Dean's List Finalist.
-        <span class="todo">[Optional: what you led as captain and a highlight or two.]</span></p>
+      <div class="modal-meta">2010 – 2014 &nbsp;•&nbsp; Mechanical subteam, then Team Captain &amp; Driver &nbsp;•&nbsp; Lee's Summit, MO</div>
+      <ul>
+        <li>2011 and 2012 seasons: on the mechanical subteam, designing, manufacturing, and refining competition robots during each build season.</li>
+        <li>2013 and 2014 seasons: team captain and the robot's driver in competition.</li>
+        <li>Volunteered more than 1,000 hours mentoring younger students through FIRST programs and summer camps.</li>
+        <li>Named a 2014 FIRST Dean's List Finalist.</li>
+      </ul>
       <p>
         <a href="https://www.teamtitanium.org/" target="_blank" rel="noopener">Team Titanium website</a> &nbsp;·&nbsp;
         <a href="#first-robotics" class="smoothScroll" data-close-modal>See the robots →</a>
