@@ -1,0 +1,289 @@
+/* ===========================================================================
+   Cameron Lerch — site-specific styles layered on top of the Folio template.
+   =========================================================================== */
+
+:root {
+  --gold: #b8a07e;
+  --gold-light: #dbcebd;
+  --ink: #292929;
+  --muted: #777;
+  --paper: #f7f7f7;
+  --todo: #b3261e;
+}
+
+/* ---------- Buttons (moved from inline <style>) ---------- */
+.button {
+  font: 16px/22px 'Poppins', helvetica, sans-serif;
+  background: var(--gold);
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 0 8px 12px 0;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+}
+.button:hover, .button:focus { background: var(--gold-light); color: #fff; text-decoration: none; }
+.button.button-outline { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
+.button.button-outline:hover { background: var(--gold); color: #fff; }
+
+/* ---------- Placeholder markers: grep for class="todo" before launch ---------- */
+.todo {
+  color: var(--todo);
+  font-style: italic;
+}
+
+/* ---------- Brand / logo ---------- */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none !important;
+}
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 7px;
+  background: var(--ink);
+  color: var(--gold);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brand-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+}
+@media (max-width: 480px) { .brand-name { display: none; } }
+
+/* ---------- About ---------- */
+#about .about-descr { text-align: left; }
+#about .about-descr .p-heading {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 16px;
+}
+#about .about-descr h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 34px;
+  margin-bottom: 18px;
+}
+.about-img img { width: 100%; height: auto; }
+.status-pill {
+  display: inline-block;
+  background: #eaf4ec;
+  color: #1e6b34;
+  font: 500 13px 'Poppins', sans-serif;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+/* ---------- Skills cards ---------- */
+.services-block span { text-transform: uppercase; }
+.services-block .separator { min-height: 66px; }
+
+/* ---------- Education tiles ---------- */
+.edu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 10px;
+}
+.edu-card {
+  width: 255px;
+  max-width: 100%;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 24px 20px 18px;
+  cursor: pointer;
+  transition: box-shadow .2s, transform .2s;
+}
+.edu-card:hover, .edu-card:focus { box-shadow: 0 10px 30px rgba(0,0,0,.08); transform: translateY(-3px); outline: none; }
+.edu-card .edu-logo { height: 120px; display: flex; align-items: center; justify-content: center; }
+.edu-card .edu-logo img { max-height: 120px; max-width: 100%; }
+.edu-card h4 { font-family: 'Playfair Display', Georgia, serif; font-size: 20px; margin: 16px 0 4px; }
+.edu-card p { margin: 0; color: var(--muted); font-size: 14px; }
+.edu-card .hint { color: var(--gold); font-size: 13px; margin-top: 8px; }
+
+/* ---------- Experience tiles ---------- */
+.portfolio-thumbnail[data-modal] { cursor: pointer; }
+.portfolio-thumbnail img { border: 1px solid #f0f0f0; transition: opacity .2s; }
+.portfolio-thumbnail[data-modal]:hover img { opacity: .85; }
+
+/* ---------- Modals (generic) ---------- */
+.modal { z-index: 2000; padding-top: 60px; }
+.modal-content {
+  position: relative;
+  max-width: 900px;
+  padding: 36px 6vw 36px;
+  border: none;
+  border-radius: 6px;
+  text-align: left;
+  margin-bottom: 60px;
+}
+.modal-content h2 { font-family: 'Playfair Display', Georgia, serif; text-align: center; margin-bottom: 6px; }
+.modal-content .modal-meta { text-align: center; color: #999; font-size: 16px; margin-bottom: 22px; }
+.modal-content h5 {
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 22px 0 10px;
+}
+.modal-content ul { padding-left: 20px; }
+.modal-content li { margin-bottom: 6px; line-height: 1.6; }
+.modal-content p { line-height: 1.7; }
+.modal-content a:not(.button) { color: var(--gold); }
+.close { top: 14px; right: 22px; }
+.course-list {
+  columns: 2;
+  column-gap: 32px;
+  list-style: none;
+  padding-left: 0 !important;
+}
+.course-list li { break-inside: avoid; }
+.course-list .code { color: #999; font-size: 13px; margin-left: 4px; }
+@media (max-width: 600px) { .course-list { columns: 1; } }
+
+/* ---------- Demonstrations ---------- */
+#demos { background: var(--paper); }
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+  text-align: left;
+}
+@media (max-width: 400px) { .demo-grid { grid-template-columns: 1fr; } }
+.demo-card {
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 14px rgba(0,0,0,.05);
+  display: flex;
+  flex-direction: column;
+}
+.demo-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #1f1f1f;
+}
+.demo-media iframe, .demo-media video {
+  position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #000;
+}
+.demo-placeholder {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  color: var(--gold-light);
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  letter-spacing: .04em;
+  background: repeating-linear-gradient(135deg, #222 0 14px, #262626 14px 28px);
+}
+.demo-placeholder i { font-size: 46px; color: var(--gold); margin-bottom: 6px; }
+.demo-body { padding: 20px 22px 22px; flex: 1; display: flex; flex-direction: column; }
+.demo-tag {
+  font: 500 12px 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.demo-body h4 { font-family: 'Playfair Display', Georgia, serif; font-size: 21px; margin-bottom: 10px; }
+.demo-body p { font-size: 14px; line-height: 1.65; color: #555; flex: 1; }
+.demo-links a {
+  display: inline-block;
+  font: 500 13px 'Poppins', sans-serif;
+  color: var(--ink);
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 5px 12px;
+  margin: 8px 8px 0 0;
+  text-decoration: none;
+  transition: all .2s;
+}
+.demo-links a:hover { border-color: var(--gold); color: var(--gold); }
+.demo-links .soon { color: #aaa; border-style: dashed; cursor: default; }
+.demo-links .soon:hover { color: #aaa; border-color: #ddd; }
+
+/* ---------- FIRST Robotics ---------- */
+#first-robotics { background: #fff; }
+.first-intro { max-width: 760px; margin: 0 auto 36px; font-size: 16px; line-height: 1.75; color: #555; }
+
+/* ---------- Publications ---------- */
+#publications { background: #fff; }
+.pub-list {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+  list-style: none;
+  padding: 0;
+}
+.pub-list li {
+  padding: 18px 0;
+  border-bottom: 1px solid #eee;
+}
+.pub-list li:last-child { border-bottom: none; }
+.pub-title { font-family: 'Playfair Display', Georgia, serif; font-size: 19px; color: var(--ink); display: block; margin-bottom: 4px; }
+.pub-authors { font-size: 14px; color: #666; }
+.pub-authors b { color: var(--ink); }
+.pub-venue { font-size: 14px; color: var(--gold); font-style: italic; }
+.pub-sub { font-family: 'Playfair Display', Georgia, serif; font-size: 26px; margin: 44px 0 10px; text-align: center; }
+.year-badge {
+  display: inline-block;
+  min-width: 46px;
+  font: 600 12px 'Poppins', sans-serif;
+  color: #fff;
+  background: var(--gold);
+  border-radius: 3px;
+  padding: 2px 6px;
+  margin-right: 8px;
+  text-align: center;
+}
+
+/* ---------- Tutoring ---------- */
+#tutoring { background: var(--paper); width: 100%; margin: 0; }
+.tutoring-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+  max-width: 1000px;
+  margin: 0 auto 30px;
+  text-align: left;
+}
+.tutor-card { background: #fff; border-radius: 6px; padding: 22px; }
+.tutor-card i { font-size: 34px; color: var(--gold); }
+.tutor-card h4 { font-family: 'Playfair Display', Georgia, serif; font-size: 19px; margin: 8px 0; }
+.tutor-card p { font-size: 14px; color: #555; line-height: 1.6; margin: 0; }
+
+/* ---------- Contact ---------- */
+.contact-details a { color: inherit; }
+
+/* ---------- Nav: tighter spacing so 8 items fit ---------- */
+@media (min-width: 1200px) {
+  nav ul li { margin-left: 22px; margin-right: 0; }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  nav ul li { margin-left: 14px; margin-right: 0; }
+  nav ul li a { font-size: 13px; }
+}
+
+/* ---------- Hero: keep the name on-screen on phones ---------- */
+@media (max-width: 600px) {
+  #header h1 { font-size: 40px; line-height: 1.15; }
+  #header h2 { font-size: 24px; }
+}
+
+/* Inline links in body copy (template sets a:visited to white) */
+.first-intro a, .first-intro a:visited { color: var(--gold); }
