@@ -29,7 +29,7 @@
 
   function openModals() {
     return Array.prototype.filter.call(document.querySelectorAll('.modal'), function (m) {
-      return m.style.display === 'block';
+      return m.style.display === 'block' && !m.classList.contains('video-modal');
     });
   }
 
@@ -65,6 +65,61 @@
 
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') openModals().forEach(closeModal);
+  });
+
+  // ---------------------------------------------------------------------
+  // Video pop-ups: <button class="video-link" data-video="YOUTUBE_ID" data-video-title="...">
+  // One shared modal; the iframe is created on open and removed on close so playback stops.
+  // ---------------------------------------------------------------------
+  var videoModal = null;
+
+  function closeVideoModal() {
+    if (!videoModal) return;
+    videoModal.style.display = 'none';
+    videoModal.querySelector('.demo-media').innerHTML = '';
+    document.body.style.overflow = '';
+    if (lastTrigger) lastTrigger.focus();
+  }
+
+  function openVideoModal(id, title, trigger) {
+    if (!videoModal) {
+      videoModal = document.createElement('div');
+      videoModal.className = 'modal video-modal';
+      videoModal.setAttribute('role', 'dialog');
+      videoModal.setAttribute('aria-modal', 'true');
+      videoModal.innerHTML =
+        '<div class="modal-content">' +
+        '<span class="close" role="button" tabindex="0" aria-label="Close">&times;</span>' +
+        '<h2></h2><div class="demo-media"></div></div>';
+      document.body.appendChild(videoModal);
+      var x = videoModal.querySelector('.close');
+      x.addEventListener('click', closeVideoModal);
+      x.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); closeVideoModal(); }
+      });
+      videoModal.addEventListener('click', function (e) { if (e.target === videoModal) closeVideoModal(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && videoModal.style.display === 'block') closeVideoModal();
+      });
+    }
+    lastTrigger = trigger || null;
+    videoModal.querySelector('h2').textContent = title || '';
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0';
+    iframe.title = title || 'Video';
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+    videoModal.querySelector('.demo-media').appendChild(iframe);
+    videoModal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    videoModal.querySelector('.close').focus();
+  }
+
+  document.querySelectorAll('.video-link[data-video]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      openVideoModal(btn.getAttribute('data-video'), btn.getAttribute('data-video-title'), btn);
+    });
   });
 
   // ---------------------------------------------------------------------

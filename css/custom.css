@@ -301,11 +301,29 @@
 .robot-grid { grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); }
 @media (max-width: 480px) { .robot-grid { grid-template-columns: 1fr; } }
 .robot-photo { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; background: #eee; }
-.robot-video-label {
-  font: 500 12px 'Poppins', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  color: #999;
-  margin: 14px 0 6px;
+
+/* Robot results list */
+.robot-results { list-style: none; padding: 0; margin: 4px 0 6px; font-size: 13px; line-height: 1.5; }
+.robot-results li { padding: 7px 0; border-top: 1px solid #f0f0f0; }
+.robot-results .robot-event { display: block; color: var(--ink); font-weight: 500; }
+.robot-results .robot-awards { color: #666; }
+.robot-results .ion-trophy { color: var(--gold); }
+.robot-source { font-size: 13px; color: #999; margin-top: 18px; }
+.robot-source a, .robot-source a:visited { color: var(--gold); }
+
+/* "Reveal video" buttons and the pop-up player */
+.video-link {
+  font: 500 13px 'Poppins', sans-serif;
+  color: #fff;
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 3px;
+  padding: 5px 14px;
+  margin: 8px 8px 0 0;
+  cursor: pointer;
+  transition: background .2s;
 }
-.robot-card .demo-media { border-radius: 4px; overflow: hidden; }
+.video-link:hover, .video-link:focus { background: var(--gold-light); border-color: var(--gold-light); outline: none; }
+.video-modal .modal-content { max-width: 1000px; padding: 44px 24px 24px; background: #111; }
+.video-modal .modal-content h2 { color: #fff; font-size: 20px; margin-bottom: 14px; }
+.video-modal .close { color: #ddd; }
