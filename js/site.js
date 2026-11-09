@@ -81,7 +81,7 @@
     if (lastTrigger) lastTrigger.focus();
   }
 
-  function openVideoModal(id, title, trigger) {
+  function openVideoModal(id, title, trigger, external, poster) {
     if (!videoModal) {
       videoModal = document.createElement('div');
       videoModal.className = 'modal video-modal';
@@ -105,13 +105,27 @@
     }
     lastTrigger = trigger || null;
     videoModal.querySelector('.video-yt-link').href = 'https://www.youtube.com/watch?v=' + encodeURIComponent(id);
+    var media = videoModal.querySelector('.demo-media');
+    var ytUrl = 'https://www.youtube.com/watch?v=' + encodeURIComponent(id);
+    videoModal.querySelector('.video-yt-link').style.display = external ? 'none' : '';
+    if (external) {
+      // YouTube blocks this video outside youtube.com: show the photo and a button instead of a broken player.
+      media.innerHTML =
+        '<div class="video-external"' + (poster ? ' style="background-image:url(\'' + poster + '\')"' : '') + '>' +
+        '<div class="video-external-inner"><p>This video can only be played on YouTube.</p>' +
+        '<a class="button" target="_blank" rel="noopener" href="' + ytUrl + '"><i class="ion-social-youtube"></i>&nbsp; Watch on YouTube</a></div></div>';
+      videoModal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+      videoModal.querySelector('.close').focus();
+      return;
+    }
     var iframe = document.createElement('iframe');
     iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0';
     iframe.title = title || 'Video';
     iframe.referrerPolicy = 'strict-origin-when-cross-origin';
     iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
     iframe.allowFullscreen = true;
-    videoModal.querySelector('.demo-media').appendChild(iframe);
+    media.appendChild(iframe);
     videoModal.style.display = 'block';
     document.body.style.overflow = 'hidden';
     videoModal.querySelector('.close').focus();
@@ -122,7 +136,8 @@
     var btn = e.target.closest ? e.target.closest('.video-link[data-video]') : null;
     if (!btn) return;
     e.preventDefault();
-    openVideoModal(btn.getAttribute('data-video'), btn.getAttribute('data-video-title'), btn);
+    openVideoModal(btn.getAttribute('data-video'), btn.getAttribute('data-video-title'), btn,
+                   btn.hasAttribute('data-video-external'), btn.getAttribute('data-video-poster'));
   });
 
   // ---------------------------------------------------------------------
@@ -135,6 +150,7 @@
       nav: true,
       navText: ['<i class="ion-chevron-left"></i>', '<i class="ion-chevron-right"></i>'],
       dots: true,
+      autoWidth: true,   // card widths come from CSS (Notable Awards is wider)
       autoplay: true,
       autoplayTimeout: 6000,
       autoplayHoverPause: true,

@@ -357,8 +357,9 @@
 }
 .robot-body > p { font-size: 14px; line-height: 1.7; color: #555; margin-bottom: 16px; }
 
-.robot-results { margin-top: auto; border-top: 1px solid #eee; padding-top: 12px; }
+
 .robot-results-title {
+  border-top: 1px solid #eee; padding-top: 12px;
   display: flex; align-items: center; justify-content: space-between;
   font: 600 12px 'Poppins', sans-serif;
   text-transform: uppercase;
@@ -392,8 +393,8 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin-top: 18px;
-  padding: 0;
+  margin-top: auto;
+  padding: 18px 0 0;
   background: none;
   border: none;
   font: 500 14px 'Poppins', sans-serif;
@@ -484,3 +485,34 @@ a.video-link:hover { color: var(--gold); }
 /* video pop-up without a title */
 .video-modal .modal-content { padding: 40px 16px 16px; }
 .video-modal .close { top: 6px; right: 14px; }
+
+/* Results as a simple list (event name, then awards) */
+.robot-results { list-style: none; padding: 0; margin: 0 0 4px; font-size: 13px; line-height: 1.55; }
+.robot-results li { padding: 8px 0; border-bottom: 1px dashed #eee; }
+.robot-results li:last-child { border-bottom: none; }
+.robot-results .robot-event { display: block; font-weight: 500; color: var(--ink); margin-bottom: 2px; padding: 0; border: 0; }
+.robot-results .robot-awards { color: #666; }
+.robot-results .robot-awards b { color: var(--ink); font-weight: 500; }
+.robot-results .ion-trophy { color: var(--gold); }
+
+/* Carousel card widths (Owl autoWidth): Notable Awards is wider */
+.first-carousel .robot-card { width: 360px; }
+.first-carousel .robot-card.awards-card { width: 500px; }
+@media (max-width: 600px) {
+  .first-carousel .robot-card, .first-carousel .robot-card.awards-card { width: calc(100vw - 40px); }
+}
+.awards-card .panel-visual { aspect-ratio: auto; height: 270px; }
+
+/* Pop-up for videos that can only play on YouTube */
+.video-external {
+  position: absolute; inset: 0;
+  background: #000 center / cover no-repeat;
+  display: flex; align-items: center; justify-content: center;
+}
+.video-external::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.55); }
+.video-external-inner { position: relative; text-align: center; color: #fff; padding: 20px; }
+.video-external-inner p { font-size: 18px; margin-bottom: 18px; color: #fff; }
+
+/* In the carousel, stack the role tag under the name so long roles fit */
+.first-carousel .robot-head { flex-direction: column; align-items: flex-start; gap: 8px; }
+.first-carousel .robot-role { white-space: normal; }
