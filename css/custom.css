@@ -519,3 +519,11 @@ a.video-link:hover { color: var(--gold); }
 }
 .first-carousel .owl-item:not(.in-view) .robot-card:hover { opacity: .6; }
 .first-carousel .owl-nav, .first-carousel .owl-dots { padding: 0 16px; }
+
+/* Results as award tags; winners/finalists are bold, same tag style */
+.rr-event { padding: 8px 0; border-bottom: 1px dashed #eee; }
+.rr-event:last-child { border-bottom: none; }
+.rr-name { font: 500 13px 'Poppins', sans-serif; color: var(--ink); margin-bottom: 6px; }
+.rr-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip-strong { font-weight: 600; color: var(--ink); }
+.chip-strong .ion-trophy { color: var(--gold); }

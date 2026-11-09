@@ -161,7 +161,7 @@
       margin: 24,
       nav: true,
       navText: ['<i class="ion-chevron-left"></i>', '<i class="ion-chevron-right"></i>'],
-      dots: true,
+      dots: false,
       autoplay: true,
       autoplayTimeout: 6000,
       autoplayHoverPause: true,
