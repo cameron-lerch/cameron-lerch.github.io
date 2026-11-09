@@ -461,7 +461,6 @@ a.video-link:hover { color: var(--gold); }
 .award-year { font: 600 12px 'Poppins', sans-serif; color: var(--gold); min-width: 78px; flex-shrink: 0; }
 .award-name { font: 500 14px 'Poppins', sans-serif; color: var(--ink); }
 .award-meta { font-size: 12px; color: #888; margin: 2px 0 0 88px; line-height: 1.5; }
-.chip-cmp { font-size: 11px; padding: 1px 8px; margin-left: 4px; color: var(--gold); border-color: var(--gold-light); background: #fff; }
 
 /* carousel arrows + dots */
 .first-carousel .owl-nav { display: flex; justify-content: center; gap: 12px; margin-top: 6px; }
@@ -495,14 +494,6 @@ a.video-link:hover { color: var(--gold); }
 .robot-results .robot-awards b { color: var(--ink); font-weight: 500; }
 .robot-results .ion-trophy { color: var(--gold); }
 
-/* Carousel card widths (Owl autoWidth): Notable Awards is wider */
-.first-carousel .robot-card { width: 360px; }
-.first-carousel .robot-card.awards-card { width: 500px; }
-@media (max-width: 600px) {
-  .first-carousel .robot-card, .first-carousel .robot-card.awards-card { width: calc(100vw - 40px); }
-}
-.awards-card .panel-visual { aspect-ratio: auto; height: 270px; }
-
 /* Pop-up for videos that can only play on YouTube */
 .video-external {
   position: absolute; inset: 0;
@@ -516,3 +507,15 @@ a.video-link:hover { color: var(--gold); }
 /* In the carousel, stack the role tag under the name so long roles fit */
 .first-carousel .robot-head { flex-direction: column; align-items: flex-start; gap: 8px; }
 .first-carousel .robot-role { white-space: normal; }
+
+/* Full-width carousel: half-visible neighbours on both sides, faded */
+#first-robotics { overflow-x: hidden; }
+.first-carousel { width: 100vw; margin-left: calc(50% - 50vw); }
+.first-carousel .owl-item .robot-card { transition: opacity .45s ease, transform .45s ease; }
+.first-carousel .owl-item:not(.in-view) .robot-card {
+  opacity: .35;
+  transform: scale(.96);
+  cursor: pointer;
+}
+.first-carousel .owl-item:not(.in-view) .robot-card:hover { opacity: .6; }
+.first-carousel .owl-nav, .first-carousel .owl-dots { padding: 0 16px; }

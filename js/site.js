@@ -144,19 +144,51 @@
   // FIRST Robotics carousel (Owl Carousel, already loaded on the home page)
   // ---------------------------------------------------------------------
   if (window.jQuery && jQuery.fn.owlCarousel && document.querySelector('.first-carousel')) {
-    jQuery('.first-carousel').owlCarousel({
+    var $fc = jQuery('.first-carousel');
+    // Owl's own .active class is unreliable with loop + stagePadding, so mark the fully shown cards ourselves.
+    function markInView(e) {
+      if (!e.item || !e.page) return;
+      var $items = $fc.find('.owl-item');
+      $items.removeClass('in-view');
+      for (var i = e.item.index; i < e.item.index + e.page.size; i++) $items.eq(i).addClass('in-view');
+    }
+    $fc.on('initialized.owl.carousel changed.owl.carousel refreshed.owl.carousel resized.owl.carousel', function (e) {
+      // run after Owl finishes updating its internal state
+      setTimeout(function () { markInView(e); }, 0);
+    });
+    $fc.owlCarousel({
       loop: true,
       margin: 24,
       nav: true,
       navText: ['<i class="ion-chevron-left"></i>', '<i class="ion-chevron-right"></i>'],
       dots: true,
-      autoWidth: true,   // card widths come from CSS (Notable Awards is wider)
       autoplay: true,
       autoplayTimeout: 6000,
       autoplayHoverPause: true,
       smartSpeed: 700,
-      responsive: { 0: { items: 1 }, 700: { items: 2 }, 1100: { items: 3 } }
+      // stagePadding leaves part of the previous/next card visible on each side (faded in CSS)
+      responsive: {
+        0:    { items: 1, stagePadding: 40 },
+        600:  { items: 1, stagePadding: 130 },
+        800:  { items: 2, stagePadding: 150 },
+        1000: { items: 3, stagePadding: 150 },
+        1250: { items: 3, stagePadding: 175 },
+        1500: { items: 3, stagePadding: 210 },
+        1800: { items: 3, stagePadding: 260 }
+      }
     });
+
+    // Clicking a faded (partly visible) card slides it into view instead of activating its links.
+    $fc[0].addEventListener('click', function (e) {
+      var item = e.target.closest('.owl-item');
+      if (!item || item.classList.contains('in-view')) return;
+      e.preventDefault();
+      e.stopPropagation();
+      var stage = $fc[0].getBoundingClientRect();
+      var box = item.getBoundingClientRect();
+      var leftSide = (box.left + box.width / 2) < (stage.left + stage.width / 2);
+      $fc.trigger(leftSide ? 'prev.owl.carousel' : 'next.owl.carousel');
+    }, true);
   }
 
   // ---------------------------------------------------------------------
