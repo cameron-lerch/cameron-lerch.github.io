@@ -296,3 +296,16 @@
 .demo-body h4 a.demo-title:hover { color: var(--gold); }
 .demo-links a.demo-more, .demo-links a.demo-more:visited { background: var(--gold); border-color: var(--gold); color: #fff; }
 .demo-links a.demo-more:hover { background: var(--gold-light); border-color: var(--gold-light); color: #fff; }
+
+/* FIRST robot cards: photo on top, video below the description */
+.robot-grid { grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); }
+@media (max-width: 480px) { .robot-grid { grid-template-columns: 1fr; } }
+.robot-photo { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; background: #eee; }
+.robot-video-label {
+  font: 500 12px 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #999;
+  margin: 14px 0 6px;
+}
+.robot-card .demo-media { border-radius: 4px; overflow: hidden; }

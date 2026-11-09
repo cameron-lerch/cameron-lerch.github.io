@@ -81,6 +81,8 @@
     iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?rel=0';
     iframe.title = 'Demo video';
     iframe.loading = 'lazy';
+    // YouTube rejects embeds without a Referer (error 153); send the origin explicitly.
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
     iframe.allow = 'accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
     iframe.allowFullscreen = true;
     box.appendChild(iframe);

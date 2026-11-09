@@ -286,6 +286,9 @@
             <div class="col-lg-3 col-md-6 portfolio-thumbnail all research awards" data-modal="surfModal">
               <img src="images/tiles/yale-surf.png" alt="Yale Summer Undergraduate Research Fellow 2018">
             </div>
+            <div class="col-lg-3 col-md-6 portfolio-thumbnail all leadership research" data-modal="leadershipAllianceModal">
+              <img src="images/tiles/leadership-alliance.png" alt="The Leadership Alliance: member since 2018, National Symposium presenter">
+            </div>
             <div class="col-lg-3 col-md-6 portfolio-thumbnail all research" data-modal="mstResearchModal">
               <img src="images/tiles/mst-research.png" alt="Missouri S&amp;T Undergraduate Research">
             </div>
@@ -596,41 +599,50 @@
         1,000 hours mentoring younger students through FIRST programs and summer camps, and I was named a 2014 FIRST Dean's List Finalist.
       </p>
 
-      <!-- One card per robot. Put the YouTube ID in data-youtube, and swap the title/description. -->
-      <div class="demo-grid">
-        <div class="demo-card">
-          <div class="demo-media" data-youtube=""></div>
+      <!-- One card per robot. Photos live in images/robotics/; videos are YouTube IDs in data-youtube. -->
+      <div class="demo-grid robot-grid">
+        <div class="demo-card robot-card">
+          <img class="robot-photo" src="images/robotics/finalforce.avif" alt="Final Force, Team 1986's 2011 FRC robot" loading="lazy">
           <div class="demo-body">
             <div class="demo-tag">2011 season · Logo Motion · Mechanical subteam</div>
-            <h4 class="todo">[Robot name]</h4>
-            <p class="todo">[What the robot did and what you worked on. Add CAD screenshots, reveal video, and match videos.]</p>
+            <h4>Final Force</h4>
+            <p>In Logo Motion, robots hung inflatable shapes on a scoring grid and launched minibots to climb towers in the final seconds. I was on the mechanical subteam that designed and built Final Force.</p>
+            <div class="robot-video-label">Reveal video</div>
+            <div class="demo-media" data-youtube="vNBUtAxtMOI"></div>
           </div>
         </div>
-        <div class="demo-card">
-          <div class="demo-media" data-youtube=""></div>
+        <div class="demo-card robot-card">
+          <img class="robot-photo" src="images/robotics/pegasus.avif" alt="Pegasus, Team 1986's 2012 FRC robot" loading="lazy">
           <div class="demo-body">
             <div class="demo-tag">2012 season · Rebound Rumble · Mechanical subteam</div>
-            <h4 class="todo">[Robot name]</h4>
-            <p class="todo">[What the robot did and what you worked on. Add CAD screenshots, reveal video, and match videos.]</p>
+            <h4>Pegasus</h4>
+            <p>In Rebound Rumble, robots shot foam basketballs into hoops and balanced on bridges at the end of each match. I was on the mechanical subteam that designed and built Pegasus.</p>
+            <div class="robot-video-label">Gameplay video</div>
+            <div class="demo-media" data-youtube="wxVGk77nMH0"></div>
           </div>
         </div>
-        <div class="demo-card">
-          <div class="demo-media" data-youtube=""></div>
+        <div class="demo-card robot-card">
+          <img class="robot-photo" src="images/robotics/kraken.avif" alt="Kraken, Team 1986's 2013 FRC robot" loading="lazy">
           <div class="demo-body">
-            <div class="demo-tag">2013 season · Ultimate Ascent · Captain &amp; driver</div>
-            <h4 class="todo">[Robot name]</h4>
-            <p class="todo">[What the robot did and what you worked on. Add CAD screenshots, reveal video, and match videos.]</p>
+            <div class="demo-tag">2013 season · Ultimate Ascent · Team captain &amp; driver</div>
+            <h4>Kraken</h4>
+            <p>In Ultimate Ascent, robots shot flying discs into goals and climbed a pyramid at the end of the match. I captained the team and drove Kraken in competition.</p>
+            <div class="robot-video-label">Reveal video</div>
+            <div class="demo-media" data-youtube="uKy-IKDq_6o"></div>
           </div>
         </div>
-        <div class="demo-card">
-          <div class="demo-media" data-youtube=""></div>
+        <div class="demo-card robot-card">
+          <img class="robot-photo" src="images/robotics/tusk.avif" alt="Tusk, Team 1986's 2014 FRC robot" loading="lazy">
           <div class="demo-body">
-            <div class="demo-tag">2014 season · Aerial Assist · Captain &amp; driver</div>
-            <h4 class="todo">[Robot name]</h4>
-            <p class="todo">[What the robot did and what you worked on. Add CAD screenshots, reveal video, and match videos.]</p>
+            <div class="demo-tag">2014 season · Aerial Assist · Team captain &amp; driver</div>
+            <h4>Tusk</h4>
+            <p>In Aerial Assist, alliances passed and launched large exercise balls into goals, earning bonus points for teamwork. I captained the team and drove Tusk in competition.</p>
+            <div class="robot-video-label">Reveal video</div>
+            <div class="demo-media" data-youtube="sLlgDgQ-K70"></div>
           </div>
         </div>
       </div>
+      <!-- TODO(cameron): CAD screenshots for each robot can go in a gallery under each card or on a FIRST project page. -->
     </div>
   </div>
 
@@ -944,9 +956,26 @@
         <li>Worked in Prof. Corey O'Hern's research group, which focuses on granular and amorphous materials.</li>
         <li>Developed high-performance molecular dynamics simulations of bulk metallic glasses in LAMMPS and studied their response to applied deformation.</li>
         <li>Calculated particle rearrangement statistics during cyclic deformation to characterize ductility.</li>
-        <li>Presented "Encoding Multidirectional Memory in Sheared Amorphous Solids" at the Leadership Alliance National Symposium.</li>
+        <li>Presented "Encoding Multidirectional Memory in Sheared Amorphous Solids" at the Leadership Alliance National Symposium, and became a member of <a href="https://theleadershipalliance.org/" target="_blank" rel="noopener">the Leadership Alliance</a>.</li>
       </ul>
       <p><a href="https://crisp.yale.edu/education/crisp-research-experiences-undergraduates-reu-program" target="_blank" rel="noopener">Yale CRISP REU program</a></p>
+    </div>
+  </div>
+
+  <div id="leadershipAllianceModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="leadershipAllianceModalTitle">
+    <div class="modal-content">
+      <span class="close" aria-label="Close">&times;</span>
+      <h2 id="leadershipAllianceModalTitle">The Leadership Alliance</h2>
+      <div class="modal-meta">Member since 2018 &nbsp;•&nbsp; Joined through my summer research fellowship at Yale</div>
+      <p>The Leadership Alliance is a national consortium of U.S. higher education institutions and private industry, founded in 1992,
+         with a mission to develop students into outstanding leaders and role models in academia, the public sector, and the private sector.
+         It supports students with mentoring and networking at every stage of the academic and career path.</p>
+      <ul>
+        <li>Became a member during my 2018 Summer Undergraduate Research Fellowship in Prof. Corey O'Hern's group at Yale.</li>
+        <li>Presented "Encoding Multidirectional Memory in Sheared Amorphous Solids" at the Leadership Alliance National Symposium in Hartford, CT (July 27, 2018).</li>
+      </ul>
+      <p class="todo">[Optional: any later involvement, e.g. mentoring, TLA Connect, or other symposia.]</p>
+      <p><a href="https://theleadershipalliance.org/" target="_blank" rel="noopener">The Leadership Alliance website</a></p>
     </div>
   </div>
 
