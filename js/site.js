@@ -90,7 +90,8 @@
       videoModal.innerHTML =
         '<div class="modal-content">' +
         '<span class="close" role="button" tabindex="0" aria-label="Close">&times;</span>' +
-        '<h2></h2><div class="demo-media"></div></div>';
+        '<h2></h2><div class="demo-media"></div>' +
+        '<a class="video-yt-link" target="_blank" rel="noopener">Video not playing? Watch on YouTube <i class="ion-android-open"></i></a></div>';
       document.body.appendChild(videoModal);
       var x = videoModal.querySelector('.close');
       x.addEventListener('click', closeVideoModal);
@@ -104,6 +105,7 @@
     }
     lastTrigger = trigger || null;
     videoModal.querySelector('h2').textContent = title || '';
+    videoModal.querySelector('.video-yt-link').href = 'https://www.youtube.com/watch?v=' + encodeURIComponent(id);
     var iframe = document.createElement('iframe');
     iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0';
     iframe.title = title || 'Video';

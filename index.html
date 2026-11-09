@@ -24,7 +24,7 @@
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/responsive.css" rel="stylesheet">
-  <link href="css/custom.css" rel="stylesheet">
+  <link href="css/custom.css?v=20261109d" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/brand/favicon-32.png">
@@ -589,7 +589,7 @@
   <div id="first-robotics" class="text-center paddsection">
     <div class="container">
       <div class="section-title text-center">
-        <h2>FIRST Robotics</h2>
+        <h2 class="title-with-logo"><img src="images/logos/first-robotics-mark.png" alt="" class="title-logo">FIRST Robotics</h2>
       </div>
 
       <p class="first-intro">
@@ -597,77 +597,152 @@
         in Lee's Summit, Missouri. I spent four seasons on the team from 2010 to 2014. For the first two I was on the mechanical subteam,
         designing and fabricating our competition robots. For the last two I was team captain and the robot's driver. Over those four seasons our
         robots won seven regional championships, and in 2013 Kraken reached the Newton Division finals at the FIRST Championship. I also volunteered
-        more than 1,000 hours mentoring younger students through FIRST programs and summer camps, and I was named a 2014 FIRST Dean's List Finalist.
+        more than 1,000 hours mentoring younger students through FIRST programs and summer camps.
       </p>
 
-      <!-- One card per robot. Photos in images/robotics/; data-video is the YouTube ID (opens in a pop-up).
-           Results from https://frc-events.firstinspires.org/team/1986 -->
-      <div class="demo-grid robot-grid">
-        <div class="demo-card robot-card">
-          <img class="robot-photo" src="images/robotics/finalforce.avif" alt="Final Force, Team 1986's 2011 FRC robot" loading="lazy">
-          <div class="demo-body">
-            <div class="demo-tag">2011 season · Logo Motion · Mechanical subteam</div>
-            <h4>Final Force</h4>
-            <p>In Logo Motion, robots hung inflatable shapes on a scoring grid and launched minibots to climb towers in the final seconds. I was on the mechanical subteam that designed and built Final Force.</p>
-            <ul class="robot-results">
-              <li><span class="robot-event">Greater Kansas City Regional</span><span class="robot-awards">Industrial Design Award</span></li>
-              <li><span class="robot-event">Colorado Regional</span><span class="robot-awards">Engineering Inspiration Award · Website Award · FIRST Dean's List Finalist</span></li>
-              <li><span class="robot-event">FIRST Championship, Curie Division</span><span class="robot-awards">Competed</span></li>
-            </ul>
-            <div class="demo-links">
-              <button type="button" class="video-link" data-video="vNBUtAxtMOI" data-video-title="Final Force (2011) · Reveal video"><i class="ion-play"></i> Reveal video</button>
-            </div>
-          </div>
+      <div class="deans-panel">
+        <img src="images/logos/first-deans-list-mark.png" alt="FIRST Dean's List">
+        <div>
+          <div class="robot-year">2014 · Greater Kansas City Regional</div>
+          <h4>FIRST Dean's List Finalist</h4>
+          <p>The FIRST Dean's List recognizes high school students for their leadership, technical expertise, and commitment to FIRST's mission
+             of inspiring students in science and technology. I was named a Dean's List Finalist in my senior year as Team Titanium's captain and driver.</p>
         </div>
-        <div class="demo-card robot-card">
-          <img class="robot-photo" src="images/robotics/pegasus.avif" alt="Pegasus, Team 1986's 2012 FRC robot" loading="lazy">
-          <div class="demo-body">
-            <div class="demo-tag">2012 season · Rebound Rumble · Mechanical subteam</div>
-            <h4>Pegasus</h4>
-            <p>In Rebound Rumble, robots shot foam basketballs into hoops and balanced on bridges at the end of each match. I was on the mechanical subteam that designed and built Pegasus.</p>
-            <ul class="robot-results">
-              <li><span class="robot-event">Greater Kansas City Regional</span><span class="robot-awards"><i class="ion-trophy"></i> <b>Regional Winner</b> · Engineering Inspiration Award · FIRST Dean's List Finalist</span></li>
-              <li><span class="robot-event">St. Louis Regional</span><span class="robot-awards"><i class="ion-trophy"></i> <b>Regional Winner</b> · Engineering Excellence Award</span></li>
-              <li><span class="robot-event">FIRST Championship, Curie Division</span><span class="robot-awards">Competed</span></li>
-            </ul>
-            <div class="demo-links">
-              <button type="button" class="video-link" data-video="wxVGk77nMH0" data-video-title="Pegasus (2012) · Gameplay video"><i class="ion-play"></i> Gameplay video</button>
-            </div>
-          </div>
-        </div>
-        <div class="demo-card robot-card">
-          <img class="robot-photo" src="images/robotics/kraken.avif" alt="Kraken, Team 1986's 2013 FRC robot" loading="lazy">
-          <div class="demo-body">
-            <div class="demo-tag">2013 season · Ultimate Ascent · Team captain &amp; driver</div>
-            <h4>Kraken</h4>
-            <p>In Ultimate Ascent, robots shot flying discs into goals and climbed a pyramid at the end of the match. I captained the team and drove Kraken in competition.</p>
-            <ul class="robot-results">
-              <li><span class="robot-event">Hub City Regional</span><span class="robot-awards"><i class="ion-trophy"></i> <b>Regional Winner</b> · Entrepreneurship Award · Quality Award · FIRST Dean's List Finalist</span></li>
-              <li><span class="robot-event">Greater Kansas City Regional</span><span class="robot-awards"><i class="ion-trophy"></i> <b>Regional Winner</b> · Industrial Design Award · Woodie Flowers Finalist</span></li>
-              <li><span class="robot-event">Oklahoma Regional</span><span class="robot-awards"><i class="ion-trophy"></i> <b>Regional Winner</b> · Gracious Professionalism Award</span></li>
-              <li><span class="robot-event">FIRST Championship</span><span class="robot-awards">Engineering Excellence Award · <b>Newton Division Finalist</b></span></li>
-            </ul>
-            <div class="demo-links">
-              <button type="button" class="video-link" data-video="uKy-IKDq_6o" data-video-title="Kraken (2013) · Reveal video"><i class="ion-play"></i> Reveal video</button>
-            </div>
-          </div>
-        </div>
-        <div class="demo-card robot-card">
+      </div>
+
+      <!-- One card per robot, newest first. Photos in images/robotics/; data-video is the YouTube ID (opens in a pop-up).
+           Results from https://frc-events.firstinspires.org/team/1986
+           TODO(cameron): replace each card's description paragraph with what you personally did that season. -->
+      <div class="robot-grid">
+        <article class="robot-card">
           <img class="robot-photo" src="images/robotics/tusk.avif" alt="Tusk, Team 1986's 2014 FRC robot" loading="lazy">
-          <div class="demo-body">
-            <div class="demo-tag">2014 season · Aerial Assist · Team captain &amp; driver</div>
-            <h4>Tusk</h4>
-            <p>In Aerial Assist, alliances passed and launched large exercise balls into goals, earning bonus points for teamwork. I captained the team and drove Tusk in competition.</p>
-            <ul class="robot-results">
-              <li><span class="robot-event">Central Illinois Regional</span><span class="robot-awards"><i class="ion-trophy"></i> <b>Regional Winner</b> · Regional Chairman's Award</span></li>
-              <li><span class="robot-event">Greater Kansas City Regional</span><span class="robot-awards"><i class="ion-trophy"></i> <b>Regional Winner</b> · Innovation in Control Award · FIRST Dean's List Finalist (me)</span></li>
-              <li><span class="robot-event">FIRST Championship, Newton Division</span><span class="robot-awards">Industrial Design Award</span></li>
-            </ul>
-            <div class="demo-links">
-              <button type="button" class="video-link" data-video="sLlgDgQ-K70" data-video-title="Tusk (2014) · Reveal video"><i class="ion-play"></i> Reveal video</button>
+          <div class="robot-body">
+            <div class="robot-head">
+              <div>
+                <div class="robot-year">2014 · Aerial Assist</div>
+                <h4>Tusk</h4>
+              </div>
+              <span class="robot-role">Team captain &amp; driver</span>
             </div>
+            <p>In Aerial Assist, alliances passed and launched large exercise balls into goals, earning bonus points for teamwork. I captained the team and drove Tusk in competition.</p>
+            <div class="robot-results">
+              <div class="robot-results-title">Results <span class="robot-wins"><i class="ion-trophy"></i> 2× Regional Winner</span></div>
+              <div class="robot-event">
+                <div class="robot-event-name">Central Illinois Regional</div>
+                <div class="robot-chips"><span class="chip chip-win"><i class="ion-trophy"></i> Regional Winner</span><span class="chip">Regional Chairman's Award</span></div>
+              </div>
+              <div class="robot-event">
+                <div class="robot-event-name">Greater Kansas City Regional</div>
+                <div class="robot-chips"><span class="chip chip-win"><i class="ion-trophy"></i> Regional Winner</span><span class="chip">Innovation in Control Award</span><span class="chip">FIRST Dean's List Finalist (me)</span></div>
+              </div>
+              <div class="robot-event">
+                <div class="robot-event-name">FIRST Championship · Newton Division</div>
+                <div class="robot-chips"><span class="chip">Industrial Design Award</span></div>
+              </div>
+            </div>
+            <!-- This video can't be embedded (YouTube blocks playback on other sites), so it opens on YouTube. -->
+            <a class="video-link" href="https://www.youtube.com/watch?v=sLlgDgQ-K70" target="_blank" rel="noopener">
+              <span class="play-dot"><i class="ion-play"></i></span> Reveal video <i class="ion-android-open video-ext"></i>
+            </a>
           </div>
-        </div>
+        </article>
+        <article class="robot-card">
+          <img class="robot-photo" src="images/robotics/kraken.avif" alt="Kraken, Team 1986's 2013 FRC robot" loading="lazy">
+          <div class="robot-body">
+            <div class="robot-head">
+              <div>
+                <div class="robot-year">2013 · Ultimate Ascent</div>
+                <h4>Kraken</h4>
+              </div>
+              <span class="robot-role">Team captain &amp; driver</span>
+            </div>
+            <p>In Ultimate Ascent, robots shot flying discs into goals and climbed a pyramid at the end of the match. I captained the team and drove Kraken in competition.</p>
+            <div class="robot-results">
+              <div class="robot-results-title">Results <span class="robot-wins"><i class="ion-trophy"></i> 3× Regional Winner</span></div>
+              <div class="robot-event">
+                <div class="robot-event-name">Hub City Regional</div>
+                <div class="robot-chips"><span class="chip chip-win"><i class="ion-trophy"></i> Regional Winner</span><span class="chip">Entrepreneurship Award</span><span class="chip">Quality Award</span><span class="chip">FIRST Dean's List Finalist</span></div>
+              </div>
+              <div class="robot-event">
+                <div class="robot-event-name">Greater Kansas City Regional</div>
+                <div class="robot-chips"><span class="chip chip-win"><i class="ion-trophy"></i> Regional Winner</span><span class="chip">Industrial Design Award</span><span class="chip">Woodie Flowers Finalist</span></div>
+              </div>
+              <div class="robot-event">
+                <div class="robot-event-name">Oklahoma Regional</div>
+                <div class="robot-chips"><span class="chip chip-win"><i class="ion-trophy"></i> Regional Winner</span><span class="chip">Gracious Professionalism Award</span></div>
+              </div>
+              <div class="robot-event">
+                <div class="robot-event-name">FIRST Championship</div>
+                <div class="robot-chips"><span class="chip chip-win"><i class="ion-trophy"></i> Newton Division Finalist</span><span class="chip">Engineering Excellence Award</span></div>
+              </div>
+            </div>
+            <button type="button" class="video-link" data-video="uKy-IKDq_6o" data-video-title="Kraken (2013) · Reveal video">
+              <span class="play-dot"><i class="ion-play"></i></span> Reveal video
+            </button>
+          </div>
+        </article>
+        <article class="robot-card">
+          <img class="robot-photo" src="images/robotics/pegasus.avif" alt="Pegasus, Team 1986's 2012 FRC robot" loading="lazy">
+          <div class="robot-body">
+            <div class="robot-head">
+              <div>
+                <div class="robot-year">2012 · Rebound Rumble</div>
+                <h4>Pegasus</h4>
+              </div>
+              <span class="robot-role">Mechanical subteam</span>
+            </div>
+            <p>In Rebound Rumble, robots shot foam basketballs into hoops and balanced on bridges at the end of each match. I was on the mechanical subteam that designed and built Pegasus.</p>
+            <div class="robot-results">
+              <div class="robot-results-title">Results <span class="robot-wins"><i class="ion-trophy"></i> 2× Regional Winner</span></div>
+              <div class="robot-event">
+                <div class="robot-event-name">Greater Kansas City Regional</div>
+                <div class="robot-chips"><span class="chip chip-win"><i class="ion-trophy"></i> Regional Winner</span><span class="chip">Engineering Inspiration Award</span><span class="chip">FIRST Dean's List Finalist</span></div>
+              </div>
+              <div class="robot-event">
+                <div class="robot-event-name">St. Louis Regional</div>
+                <div class="robot-chips"><span class="chip chip-win"><i class="ion-trophy"></i> Regional Winner</span><span class="chip">Engineering Excellence Award</span></div>
+              </div>
+              <div class="robot-event">
+                <div class="robot-event-name">FIRST Championship · Curie Division</div>
+                <div class="robot-chips"><span class="chip chip-muted">Competed</span></div>
+              </div>
+            </div>
+            <button type="button" class="video-link" data-video="wxVGk77nMH0" data-video-title="Pegasus (2012) · Gameplay video">
+              <span class="play-dot"><i class="ion-play"></i></span> Gameplay video
+            </button>
+          </div>
+        </article>
+        <article class="robot-card">
+          <img class="robot-photo" src="images/robotics/finalforce.avif" alt="Final Force, Team 1986's 2011 FRC robot" loading="lazy">
+          <div class="robot-body">
+            <div class="robot-head">
+              <div>
+                <div class="robot-year">2011 · Logo Motion</div>
+                <h4>Final Force</h4>
+              </div>
+              <span class="robot-role">Mechanical subteam</span>
+            </div>
+            <p>In Logo Motion, robots hung inflatable shapes on a scoring grid and launched minibots to climb towers in the final seconds. I was on the mechanical subteam that designed and built Final Force.</p>
+            <div class="robot-results">
+              <div class="robot-results-title">Results </div>
+              <div class="robot-event">
+                <div class="robot-event-name">Greater Kansas City Regional</div>
+                <div class="robot-chips"><span class="chip">Industrial Design Award</span></div>
+              </div>
+              <div class="robot-event">
+                <div class="robot-event-name">Colorado Regional</div>
+                <div class="robot-chips"><span class="chip">Engineering Inspiration Award</span><span class="chip">Website Award</span><span class="chip">FIRST Dean's List Finalist</span></div>
+              </div>
+              <div class="robot-event">
+                <div class="robot-event-name">FIRST Championship · Curie Division</div>
+                <div class="robot-chips"><span class="chip chip-muted">Competed</span></div>
+              </div>
+            </div>
+            <button type="button" class="video-link" data-video="vNBUtAxtMOI" data-video-title="Final Force (2011) · Reveal video">
+              <span class="play-dot"><i class="ion-play"></i></span> Reveal video
+            </button>
+          </div>
+        </article>
       </div>
       <p class="robot-source">Results from <a href="https://frc-events.firstinspires.org/team/1986" target="_blank" rel="noopener">FRC Events</a>.</p>
       <!-- TODO(cameron): CAD screenshots for each robot can go in a gallery under each card or on a FIRST project page. -->
@@ -1201,7 +1276,7 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
-  <script src="js/site.js"></script>
+  <script src="js/site.js?v=20261109d"></script>
 
 </body>
 
