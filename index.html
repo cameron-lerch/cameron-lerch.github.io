@@ -24,7 +24,7 @@
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/responsive.css" rel="stylesheet">
-  <link href="css/custom.css?v=20261109d" rel="stylesheet">
+  <link href="css/custom.css?v=20261109f" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/brand/favicon-32.png">
@@ -600,20 +600,72 @@
         more than 1,000 hours mentoring younger students through FIRST programs and summer camps.
       </p>
 
-      <div class="deans-panel">
-        <img src="images/logos/first-deans-list-mark.png" alt="FIRST Dean's List">
-        <div>
-          <div class="robot-year">2014 · Greater Kansas City Regional</div>
-          <h4>FIRST Dean's List Finalist</h4>
-          <p>The FIRST Dean's List recognizes high school students for their leadership, technical expertise, and commitment to FIRST's mission
-             of inspiring students in science and technology. I was named a Dean's List Finalist in my senior year as Team Titanium's captain and driver.</p>
-        </div>
-      </div>
-
-      <!-- One card per robot, newest first. Photos in images/robotics/; data-video is the YouTube ID (opens in a pop-up).
+      <!-- Looping carousel (Owl Carousel, set up in js/site.js). Order: Dean's List, Notable Awards, robots newest first.
            Results from https://frc-events.firstinspires.org/team/1986
-           TODO(cameron): replace each card's description paragraph with what you personally did that season. -->
-      <div class="robot-grid">
+           TODO(cameron): replace each robot card's description paragraph with what you personally did that season. -->
+      <div class="first-carousel owl-carousel owl-theme">
+        <article class="robot-card">
+          <div class="panel-visual panel-visual-light"><img src="images/logos/first-deans-list-mark.png" alt="FIRST Dean's List"></div>
+          <div class="robot-body">
+            <div class="robot-head">
+              <div>
+                <div class="robot-year">2014 · Greater Kansas City Regional</div>
+                <h4>FIRST Dean's List Finalist</h4>
+              </div>
+              <span class="robot-role">Personal award</span>
+            </div>
+            <p>The FIRST Dean's List recognizes high school students for their leadership, technical expertise, and commitment to FIRST's
+               mission of inspiring students in science and technology. I was named a Dean's List Finalist in my senior year as
+               Team Titanium's captain and driver.</p>
+            <a class="video-link" href="https://www.firstinspires.org/robotics/frc/awards" target="_blank" rel="noopener">
+              <span class="play-dot"><i class="ion-ribbon-b"></i></span> About the award <i class="ion-android-open video-ext"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="robot-card">
+          <div class="panel-visual panel-visual-dark"><i class="ion-trophy"></i><span>Notable Awards</span></div>
+          <div class="robot-body">
+            <div class="robot-head">
+              <div>
+                <div class="robot-year">Team 1986 · 2011 – 2014</div>
+                <h4>Notable Awards</h4>
+              </div>
+              <span class="robot-role">Team awards</span>
+            </div>
+            <ul class="award-list">
+              <li>
+                <div class="award-line"><span class="award-year">2013</span><span class="award-name">Engineering Excellence Award</span></div>
+                <div class="award-meta">FIRST Championship · Kraken</div>
+              </li>
+              <li>
+                <div class="award-line"><span class="award-year">2013</span><span class="award-name">Newton Division Finalist</span></div>
+                <div class="award-meta">FIRST Championship · Kraken</div>
+              </li>
+              <li>
+                <div class="award-line"><span class="award-year">2014</span><span class="award-name">Industrial Design Award</span></div>
+                <div class="award-meta">FIRST Championship, Newton Division · Tusk</div>
+              </li>
+              <li>
+                <div class="award-line"><span class="award-year">2014</span><span class="award-name">Regional Chairman's Award</span></div>
+                <div class="award-meta">Central Illinois Regional · Tusk <span class="chip chip-cmp" title="Earned a spot at the FIRST Championship">Championship qualifier</span></div>
+              </li>
+              <li>
+                <div class="award-line"><span class="award-year">2012</span><span class="award-name">Engineering Inspiration Award</span></div>
+                <div class="award-meta">Greater Kansas City Regional · Pegasus <span class="chip chip-cmp" title="Earned a spot at the FIRST Championship">Championship qualifier</span></div>
+              </li>
+              <li>
+                <div class="award-line"><span class="award-year">2011</span><span class="award-name">Engineering Inspiration Award</span></div>
+                <div class="award-meta">Colorado Regional · Final Force <span class="chip chip-cmp" title="Earned a spot at the FIRST Championship">Championship qualifier</span></div>
+              </li>
+              <li>
+                <div class="award-line"><span class="award-year">2012–2014</span><span class="award-name">7 Regional Wins</span></div>
+                <div class="award-meta">St. Louis, Hub City, Oklahoma, Central Illinois, and Greater Kansas City (×3) · Pegasus, Kraken, Tusk <span class="chip chip-cmp" title="Earned a spot at the FIRST Championship">Championship qualifier</span></div>
+              </li>
+            </ul>
+          </div>
+        </article>
+
         <article class="robot-card">
           <img class="robot-photo" src="images/robotics/tusk.avif" alt="Tusk, Team 1986's 2014 FRC robot" loading="lazy">
           <div class="robot-body">
@@ -1276,7 +1328,7 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
-  <script src="js/site.js?v=20261109d"></script>
+  <script src="js/site.js?v=20261109f"></script>
 
 </body>
 

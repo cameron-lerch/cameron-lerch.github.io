@@ -424,3 +424,63 @@ a.video-link:hover { color: var(--gold); }
   display: inline-block; margin-top: 12px; font-size: 13px; color: #bbb; text-decoration: none;
 }
 .video-modal .video-yt-link:hover { color: var(--gold); }
+
+/* ---------- FIRST carousel (one looping row) ---------- */
+.first-carousel { text-align: left; }
+.first-carousel .owl-stage { display: flex; }
+.first-carousel .owl-item { display: flex; padding: 6px 0 14px; }
+.first-carousel .robot-card { width: 100%; }
+.first-carousel .owl-item img { width: 100%; }
+
+/* top visual for the non-robot panels, same 4:3 box as the robot photos */
+.panel-visual {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.panel-visual-light { background: var(--paper); }
+.first-carousel .panel-visual-light img { width: auto !important; max-width: 42%; max-height: 58%; }
+.panel-visual-dark { background: var(--ink); color: var(--gold); }
+.panel-visual-dark i { font-size: 72px; line-height: 1; }
+.panel-visual-dark span {
+  font: 600 13px 'Poppins', sans-serif;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+/* Notable awards list */
+.award-list { list-style: none; padding: 0; margin: 0; }
+.award-list li { padding: 9px 0; border-bottom: 1px dashed #eee; }
+.award-list li:last-child { border-bottom: none; }
+.award-line { display: flex; gap: 10px; align-items: baseline; }
+.award-year { font: 600 12px 'Poppins', sans-serif; color: var(--gold); min-width: 78px; flex-shrink: 0; }
+.award-name { font: 500 14px 'Poppins', sans-serif; color: var(--ink); }
+.award-meta { font-size: 12px; color: #888; margin: 2px 0 0 88px; line-height: 1.5; }
+.chip-cmp { font-size: 11px; padding: 1px 8px; margin-left: 4px; color: var(--gold); border-color: var(--gold-light); background: #fff; }
+
+/* carousel arrows + dots */
+.first-carousel .owl-nav { display: flex; justify-content: center; gap: 12px; margin-top: 6px; }
+.first-carousel .owl-nav button.owl-prev,
+.first-carousel .owl-nav button.owl-next {
+  width: 40px; height: 40px;
+  border-radius: 50% !important;
+  background: #fff !important;
+  border: 1px solid #e5e5e5 !important;
+  color: var(--ink) !important;
+  font-size: 16px !important;
+  transition: all .2s;
+}
+.first-carousel .owl-nav button:hover { background: var(--gold) !important; border-color: var(--gold) !important; color: #fff !important; }
+.first-carousel .owl-dots { text-align: center; margin-top: 10px; }
+.first-carousel .owl-dots .owl-dot span {
+  display: block; width: 9px; height: 9px; margin: 4px; border-radius: 50%; background: #ddd; transition: background .2s;
+}
+.first-carousel .owl-dots .owl-dot.active span { background: var(--gold); }
+
+/* video pop-up without a title */
+.video-modal .modal-content { padding: 40px 16px 16px; }
+.video-modal .close { top: 6px; right: 14px; }

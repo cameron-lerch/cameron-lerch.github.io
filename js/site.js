@@ -90,7 +90,7 @@
       videoModal.innerHTML =
         '<div class="modal-content">' +
         '<span class="close" role="button" tabindex="0" aria-label="Close">&times;</span>' +
-        '<h2></h2><div class="demo-media"></div>' +
+        '<div class="demo-media"></div>' +
         '<a class="video-yt-link" target="_blank" rel="noopener">Video not playing? Watch on YouTube <i class="ion-android-open"></i></a></div>';
       document.body.appendChild(videoModal);
       var x = videoModal.querySelector('.close');
@@ -104,7 +104,6 @@
       });
     }
     lastTrigger = trigger || null;
-    videoModal.querySelector('h2').textContent = title || '';
     videoModal.querySelector('.video-yt-link').href = 'https://www.youtube.com/watch?v=' + encodeURIComponent(id);
     var iframe = document.createElement('iframe');
     iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0';
@@ -118,11 +117,31 @@
     videoModal.querySelector('.close').focus();
   }
 
-  document.querySelectorAll('.video-link[data-video]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      openVideoModal(btn.getAttribute('data-video'), btn.getAttribute('data-video-title'), btn);
-    });
+  // Delegated so it also works on the copies a looping carousel makes of each card.
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.video-link[data-video]') : null;
+    if (!btn) return;
+    e.preventDefault();
+    openVideoModal(btn.getAttribute('data-video'), btn.getAttribute('data-video-title'), btn);
   });
+
+  // ---------------------------------------------------------------------
+  // FIRST Robotics carousel (Owl Carousel, already loaded on the home page)
+  // ---------------------------------------------------------------------
+  if (window.jQuery && jQuery.fn.owlCarousel && document.querySelector('.first-carousel')) {
+    jQuery('.first-carousel').owlCarousel({
+      loop: true,
+      margin: 24,
+      nav: true,
+      navText: ['<i class="ion-chevron-left"></i>', '<i class="ion-chevron-right"></i>'],
+      dots: true,
+      autoplay: true,
+      autoplayTimeout: 6000,
+      autoplayHoverPause: true,
+      smartSpeed: 700,
+      responsive: { 0: { items: 1 }, 700: { items: 2 }, 1100: { items: 3 } }
+    });
+  }
 
   // ---------------------------------------------------------------------
   // Demo media: <div class="demo-media" data-youtube="VIDEO_ID">
