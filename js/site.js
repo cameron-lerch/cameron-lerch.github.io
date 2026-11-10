@@ -197,12 +197,12 @@
 
   // ---------------------------------------------------------------------
   // Demo media: <div class="demo-media" data-youtube="VIDEO_ID">
-  // Empty data-youtube shows a "video coming soon" placeholder.
+  // Empty data-youtube shows a "media coming soon" placeholder.
   // ---------------------------------------------------------------------
   document.querySelectorAll('.demo-media[data-youtube]').forEach(function (box) {
     var id = (box.getAttribute('data-youtube') || '').trim();
     if (!id) {
-      box.innerHTML = '<div class="demo-placeholder"><i class="ion-ios-videocam-outline"></i>Video coming soon</div>';
+      box.innerHTML = '<div class="demo-placeholder"><i class="ion-images"></i>Media coming soon</div>';
       return;
     }
     var iframe = document.createElement('iframe');
