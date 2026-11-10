@@ -23,14 +23,24 @@ $(document).ready(function() {
 
     $(this).addClass('active');
 
-    var target = this.hash,
-        menu = target;
+    var hash = this.hash,
+        target = hash ? $(hash) : $();
 
-    target = $(target);
+    if (!target.length) {          // no matching section on this page
+      $(document).on("scroll", onScroll);
+      return;
+    }
+
     $('html, body').stop().animate({
       'scrollTop': target.offset().top - 80
-    }, 500, 'swing', function() {
-      window.location.hash = target.selector;
+    }, 500, 'swing').promise().done(function() {
+      // Update the address bar to the section (e.g. #about) without jumping.
+      // (The template used target.selector, which jQuery 3 removed, producing "#undefined".)
+      if (window.history && history.pushState) {
+        history.pushState(null, '', hash);
+      } else {
+        window.location.hash = hash;
+      }
       $(document).on("scroll", onScroll);
     });
   });
