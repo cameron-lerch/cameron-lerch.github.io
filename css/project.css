@@ -127,3 +127,27 @@ a:hover { color: #9c8565; }
   font-size: 14px;
 }
 .project-footer a { color: #fff; }
+
+/* ---------- Image lightbox (js/site.js) ---------- */
+img.zoomable { cursor: zoom-in; }
+img.zoomable:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.lightbox {
+  position: fixed; inset: 0; z-index: 1000;
+  display: none; align-items: center; justify-content: center;
+  background: rgba(10,10,10,.92);
+  padding: 48px 72px;
+}
+.lightbox.open { display: flex; }
+.lightbox figure { margin: 0; max-width: 100%; max-height: 100%; display: flex; flex-direction: column; align-items: center; }
+.lightbox img { max-width: 100%; max-height: calc(100vh - 140px); object-fit: contain; border-radius: 4px; background: #fff; }
+.lightbox figcaption { color: #ccc; font-size: 14px; margin-top: 12px; text-align: center; max-width: 900px; }
+.lightbox button {
+  position: absolute; background: none; border: 0; color: #ddd; cursor: pointer;
+  font-size: 30px; line-height: 1; padding: 10px;
+}
+.lightbox button:hover, .lightbox button:focus-visible { color: var(--gold); }
+.lb-close { top: 12px; right: 18px; font-size: 40px !important; }
+.lb-prev { left: 14px; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 14px; top: 50%; transform: translateY(-50%); }
+.lightbox.lb-single .lb-prev, .lightbox.lb-single .lb-next { display: none; }
+@media (max-width: 600px) { .lightbox { padding: 48px 12px; } .lb-prev { left: 0; } .lb-next { right: 0; } }
