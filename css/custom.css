@@ -566,3 +566,5 @@ a.video-link:hover { color: var(--gold); }
   font: 600 10px 'Poppins', sans-serif; letter-spacing: .08em; text-transform: uppercase;
   color: var(--gold); border: 1px solid var(--gold-light); border-radius: 999px; padding: 0 7px;
 }
+#tutoring .first-intro { margin-bottom: 16px; }
+#tutoring .first-intro:last-of-type { margin-bottom: 36px; }
