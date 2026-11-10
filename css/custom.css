@@ -561,3 +561,8 @@ a.video-link:hover { color: var(--gold); }
 }
 .tile-details:hover, .tile-details:focus-visible { background: var(--ink); color: #fff; text-decoration: none; }
 .modal-details { margin-top: 18px; }
+.rr-off {
+  display: inline-block; margin-left: 6px; vertical-align: 1px;
+  font: 600 10px 'Poppins', sans-serif; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--gold); border: 1px solid var(--gold-light); border-radius: 999px; padding: 0 7px;
+}
