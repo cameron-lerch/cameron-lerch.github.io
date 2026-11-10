@@ -324,9 +324,7 @@ nav ul li a {
   text-align: left;
 }
 
-a:visited{
-  color:white;
-}
+/* (template rule "a:visited { color: white }" removed: it turned visited nav links and buttons white on white) */
 
 /*-----------------------------------------------------------------------------------*/
 /*   Services
