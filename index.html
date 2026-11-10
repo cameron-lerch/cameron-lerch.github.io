@@ -24,7 +24,7 @@
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/responsive.css" rel="stylesheet">
-  <link href="css/custom.css?v=20261109n" rel="stylesheet">
+  <link href="css/custom.css?v=20261110a" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/brand/favicon-32.png">
@@ -281,7 +281,7 @@
               <img src="images/tiles/yale-teaching.png" alt="Yale Teaching Fellow">
             </div>
             <div class="col-lg-3 col-md-6 portfolio-thumbnail all leadership" data-modal="gecoModal">
-              <img src="images/tiles/yale-geco.png" alt="Yale GECO: TGIF and Project Manager">
+              <img src="images/tiles/yale-geco.png" alt="Yale GECO: Activities Coordinator, TGIF and Project Manager">
             </div>
             <div class="col-lg-3 col-md-6 portfolio-thumbnail all research awards" data-modal="surfModal">
               <img src="images/tiles/yale-surf.png" alt="Yale Summer Undergraduate Research Fellow 2018">
@@ -314,13 +314,16 @@
               <img src="images/tiles/physics-societies.png" alt="Sigma Pi Sigma and Society of Physics Students">
             </div>
             <div class="col-lg-3 col-md-6 portfolio-thumbnail all leadership" data-modal="astroModal">
-              <img src="images/tiles/astronomy-society.png" alt="S&amp;T Astronomical Research Society, Vice President">
+              <img src="images/tiles/astronomy-society.png" alt="Missouri S&amp;T Astronomical Research Society (STARS): Co-founder and Vice President">
             </div>
             <div class="col-lg-3 col-md-6 portfolio-thumbnail all leadership" data-modal="firstModal">
               <img src="images/tiles/first-robotics.png" alt="FIRST Robotics: Driver and Team Captain, Team 1986 Team Titanium">
             </div>
             <div class="col-lg-3 col-md-6 portfolio-thumbnail all awards" data-modal="deansListModal">
               <img src="images/tiles/first-deans-list.png" alt="FIRST Dean's List Finalist 2014">
+            </div>
+            <div class="col-lg-3 col-md-6 portfolio-thumbnail all awards leadership" data-modal="battleBrainsModal">
+              <img src="images/tiles/battle-of-the-brains.png" alt="Burns and McDonnell Battle of the Brains: 2nd place, Summit Technology Academy, 2014">
             </div>
             <div class="col-lg-3 col-md-6 portfolio-thumbnail all awards leadership" data-modal="nhsModal">
               <img src="images/tiles/nhs.png" alt="National Honor Society, Lee's Summit West">
@@ -346,7 +349,8 @@
       <div class="demo-grid">
 
         <div class="demo-card">
-          <div class="demo-media" data-youtube=""></div>
+          <!-- TODO(cameron): replace this photo with the experiment video when it's ready -->
+          <div class="demo-media"><img src="images/projects/safety-critical-timelapse.jpg" alt="Long-exposure photo of a drone's ergodic search trajectory weaving between obstacles" loading="lazy"></div>
           <div class="demo-body">
             <div class="demo-tag">Research · ICRA 2023</div>
             <h4><a class="demo-title" href="projects/safety-critical-ergodic-exploration.html">Safety-Critical Ergodic Exploration</a></h4>
@@ -375,6 +379,7 @@
                and an SO-101 robotic arm turns toward each one, points, beckons, and waves. Runs on both a simulated and a real arm.</p>
             <div class="demo-links">
               <a class="demo-more" href="projects/viam-greeter.html"><i class="ion-arrow-right-c"></i> Details</a>
+              <a href="projects/viam-greeter.html#sim-video"><i class="ion-play"></i> Simulation video</a>
               <a href="https://github.com/cameron-lerch/ViamGreeter" target="_blank" rel="noopener"><i class="ion-social-github"></i> Code</a>
             </div>
           </div>
@@ -395,11 +400,12 @@
         </div>
 
         <div class="demo-card">
-          <div class="demo-media" data-youtube=""></div>
+          <div class="demo-media"><img class="fit-contain" src="images/projects/object-reconstruction.gif" alt="Animation of a 3D mesh of an object building up as more camera views are fused" loading="lazy"></div>
           <div class="demo-body">
             <div class="demo-tag">Personal project · Viam</div>
             <h4><a class="demo-title" href="projects/viam-object-reconstruction.html">ViamObjectReconstruction</a></h4>
-            <p class="todo">[One or two sentences on what this project does.]</p>
+            <p>Finds the objects on a table, drives a Viam-controlled arm with a wrist-mounted Intel RealSense depth camera around each one,
+               and fuses the views into a smooth, watertight 3D mesh of every object.</p>
             <div class="demo-links">
               <a class="demo-more" href="projects/viam-object-reconstruction.html"><i class="ion-arrow-right-c"></i> Details</a>
               <a class="soon"><i class="ion-social-github"></i> Code coming soon</a>
@@ -408,7 +414,7 @@
         </div>
 
         <div class="demo-card">
-          <div class="demo-media" data-youtube=""></div>
+          <div class="demo-media"><img src="images/projects/energy-aware.png" alt="Composite photo of a drone team exploring the flight arena" loading="lazy"></div>
           <div class="demo-body">
             <div class="demo-tag">Research · ICRA 2024</div>
             <h4><a class="demo-title" href="projects/energy-aware-ergodic-search.html">Energy-Aware Ergodic Search</a></h4>
@@ -416,13 +422,14 @@
                and planning trades battery use against coverage so at least one agent is always exploring.</p>
             <div class="demo-links">
               <a class="demo-more" href="projects/energy-aware-ergodic-search.html"><i class="ion-arrow-right-c"></i> Details</a>
+              <a href="https://github.com/adamseew/enerergo" target="_blank" rel="noopener"><i class="ion-social-github"></i> Code</a>
               <a href="https://arxiv.org/abs/2310.09470" target="_blank" rel="noopener"><i class="ion-document-text"></i> Paper</a>
             </div>
           </div>
         </div>
 
         <div class="demo-card">
-          <div class="demo-media" data-youtube=""></div>
+          <div class="demo-media"><img src="images/projects/stein-variational.png" alt="Long-exposure photo of several diverse drone search trajectories around block towers" loading="lazy"></div>
           <div class="demo-body">
             <div class="demo-tag">Research · RSS 2024</div>
             <h4><a class="demo-title" href="projects/stein-variational-ergodic-search.html">Stein Variational Ergodic Search</a></h4>
@@ -431,6 +438,24 @@
             <div class="demo-links">
               <a class="demo-more" href="projects/stein-variational-ergodic-search.html"><i class="ion-arrow-right-c"></i> Details</a>
               <a href="https://arxiv.org/abs/2406.11767" target="_blank" rel="noopener"><i class="ion-document-text"></i> Paper</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-card">
+          <div class="demo-media">
+            <video controls muted playsinline preload="metadata">
+              <source src="images/projects/yale-y-swarm.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="demo-body">
+            <div class="demo-tag">Lab demo · Crazyflie swarm</div>
+            <h4><a class="demo-title" href="projects/yale-y-swarm.html">Yale "Y" Drone Swarm</a></h4>
+            <p>A swarm of Bitcraze Crazyflie 2.1 drones that flies into formation to spell a "Y". I built, calibrated, and programmed it over
+               a single weekend, right after the drones arrived, to show prospective Ph.D. students visiting the newly opened lab.</p>
+            <div class="demo-links">
+              <a class="demo-more" href="projects/yale-y-swarm.html"><i class="ion-arrow-right-c"></i> Details</a>
+              <a href="https://github.com/cameron-lerch/YaleYswarmDemo" target="_blank" rel="noopener"><i class="ion-social-github"></i> Code</a>
             </div>
           </div>
         </div>
@@ -450,12 +475,12 @@
         </div>
 
         <div class="demo-card">
-          <div class="demo-media" data-youtube=""></div>
+          <div class="demo-media media-light"><img class="fit-contain" src="images/projects/electrolysis-enclosure-pair.jpg" alt="The finished electrolysis enclosure next to its CAD model" loading="lazy"></div>
           <div class="demo-body">
             <div class="demo-tag">Work · Oxylus Energy</div>
             <h4><a class="demo-title" href="projects/electrolysis-enclosure.html">Electrolysis Stack Enclosure</a></h4>
-            <p>A sealed enclosure for a large-scale electrolysis stack with fume-hood exhaust, designed using OSHA industrial ventilation
-               guidance to dilute and remove carbon monoxide.</p>
+            <p>An airtight, mobile 80/20 and polycarbonate enclosure for a large-scale electrolysis stack, vented to a fume hood and designed
+               to OSHA standards so people stay safe even in a worst-case carbon monoxide leak.</p>
             <div class="demo-links">
               <a class="demo-more" href="projects/electrolysis-enclosure.html"><i class="ion-arrow-right-c"></i> Details</a>
               <a href="https://oxylusenergy.com/" target="_blank" rel="noopener"><i class="ion-earth"></i> Oxylus Energy</a>
@@ -559,10 +584,23 @@
           <div class="demo-links"><a href="docs/posters/ICRA2023-Safety-Critical-Ergodic-Exploration.pdf" target="_blank" rel="noopener">Poster (PDF)</a></div>
         </li>
         <li>
+          <span class="pub-title">Disorder and Dynamics of Quantum Materials</span>
+          <div class="pub-authors"><b>C. Lerch</b>, T. Vojta</div>
+          <div class="pub-venue">Missouri Undergraduate Research Day at the Capitol · Jefferson City, MO · 2019</div>
+          <div class="demo-links"><a href="images/projects/poster-disorder-and-dynamics.jpg" target="_blank" rel="noopener">Poster (image)</a></div>
+        </li>
+        <li>
           <span class="pub-title">Monte Carlo Simulations of the Magnetic Behavior of Diluted Hexaferrites</span>
           <div class="pub-authors"><b>C. Lerch</b>, T. Vojta, J. Medvedeva</div>
-          <div class="pub-venue">Missouri Undergraduate Research Day at the Capitol · Jefferson City, MO · 2019</div>
           <div class="pub-venue">Missouri S&amp;T Fuller Poster Competition: 1st place (47th annual), runner-up (48th annual)</div>
+          <div class="demo-links"><a href="images/projects/poster-fuller-hexaferrites.jpg" target="_blank" rel="noopener">Poster (image)</a></div>
+        </li>
+        <li>
+          <span class="pub-title">Magnetic Percolation Transition in Diluted Hexaferrites</span>
+          <!-- TODO(cameron): confirm co-authors and the exact date (session S40) -->
+          <div class="pub-authors"><b>C. Lerch</b>, T. Vojta</div>
+          <div class="pub-venue">APS March Meeting · Boston, MA · March 2019</div>
+          <div class="demo-links"><a href="https://meetings-archive.aps.org/mar/2019/s40/11/" target="_blank" rel="noopener">Abstract</a></div>
         </li>
         <li>
           <span class="pub-title">Encoding Multidirectional Memory in Sheared Amorphous Solids</span>
@@ -600,9 +638,8 @@
         more than 1,000 hours mentoring younger students through FIRST programs and summer camps.
       </p>
 
-      <!-- Looping carousel (Owl Carousel, set up in js/site.js). Order: Dean's List, Notable Awards, robots newest first.
-           Results from https://frc-events.firstinspires.org/team/1986
-           TODO(cameron): replace each robot card's description paragraph with what you personally did that season. -->
+      <!-- Looping carousel (Owl Carousel, set up in js/site.js). Order: Dean's List, Notable Awards, robots newest first, then off-season.
+           Results from https://frc-events.firstinspires.org/team/1986 ; each card links to its season on The Blue Alliance. -->
       <div class="first-carousel owl-carousel owl-theme">
         <article class="robot-card">
           <div class="panel-visual panel-visual-light"><img src="images/logos/first-deans-list-mark.png" alt="FIRST Dean's List"></div>
@@ -635,32 +672,28 @@
             </div>
             <ul class="award-list">
               <li>
-                <div class="award-line"><span class="award-year">2013</span><span class="award-name">Engineering Excellence Award</span></div>
-                <div class="award-meta">FIRST Championship · Kraken</div>
+                <div class="award-line"><span class="award-year">7×</span><span class="award-name">Regional Winner</span></div>
+                <div class="award-meta">2012 St. Louis, Greater Kansas City · 2013 Hub City, Greater Kansas City, Oklahoma · 2014 Central Illinois, Greater Kansas City</div>
               </li>
               <li>
-                <div class="award-line"><span class="award-year">2013</span><span class="award-name">Newton Division Finalist</span></div>
-                <div class="award-meta">FIRST Championship · Kraken</div>
+                <div class="award-line"><span class="award-year">3×</span><span class="award-name">Industrial Design Award</span></div>
+                <div class="award-meta">2011 Greater Kansas City · 2013 Greater Kansas City · 2014 FIRST Championship, Newton Division</div>
               </li>
               <li>
-                <div class="award-line"><span class="award-year">2014</span><span class="award-name">Industrial Design Award</span></div>
-                <div class="award-meta">FIRST Championship, Newton Division · Tusk</div>
+                <div class="award-line"><span class="award-year">2×</span><span class="award-name">Engineering Excellence Award</span></div>
+                <div class="award-meta">2012 St. Louis · 2013 FIRST Championship</div>
+              </li>
+              <li>
+                <div class="award-line"><span class="award-year">2×</span><span class="award-name">Engineering Inspiration Award</span></div>
+                <div class="award-meta">2011 Colorado · 2012 Greater Kansas City</div>
               </li>
               <li>
                 <div class="award-line"><span class="award-year">2014</span><span class="award-name">Regional Chairman's Award</span></div>
-                <div class="award-meta">Central Illinois Regional · Tusk</div>
+                <div class="award-meta">Central Illinois Regional</div>
               </li>
               <li>
-                <div class="award-line"><span class="award-year">2012</span><span class="award-name">Engineering Inspiration Award</span></div>
-                <div class="award-meta">Greater Kansas City Regional · Pegasus</div>
-              </li>
-              <li>
-                <div class="award-line"><span class="award-year">2011</span><span class="award-name">Engineering Inspiration Award</span></div>
-                <div class="award-meta">Colorado Regional · Final Force</div>
-              </li>
-              <li>
-                <div class="award-line"><span class="award-year">2012–2014</span><span class="award-name">7 Regional Wins</span></div>
-                <div class="award-meta">St. Louis, Hub City, Oklahoma, Central Illinois, and Greater Kansas City (×3) · Pegasus, Kraken, Tusk</div>
+                <div class="award-line"><span class="award-year">2013</span><span class="award-name">Newton Division Finalist</span></div>
+                <div class="award-meta">FIRST Championship</div>
               </li>
             </ul>
           </div>
@@ -676,7 +709,9 @@
               </div>
               <span class="robot-role">Team captain &amp; driver</span>
             </div>
-            <p>In Aerial Assist, alliances passed and launched large exercise balls into goals, earning bonus points for teamwork. I captained the team and drove Tusk in competition.</p>
+            <p>My senior year and final season. I put in more than 300 hours over the six-week build season, with a big role in mechanical
+               design, prototyping, and fabrication, and I mentored younger students, teaching them how to use the machines in the shop.
+               In Aerial Assist, alliances passed and launched large exercise balls into goals, earning bonus points for teamwork.</p>
             <div class="robot-results-title">Results <span class="robot-wins"><i class="ion-trophy"></i> 2× Regional Winner</span></div>
             <div class="rr">
               <div class="rr-event">
@@ -692,10 +727,16 @@
                 <div class="rr-chips"><span class="chip">Industrial Design Award</span></div>
               </div>
             </div>
-            <!-- This video is blocked from playing outside YouTube, so the pop-up links out instead. -->
-            <button type="button" class="video-link" data-video="sLlgDgQ-K70" data-video-title="Tusk (2014) · Reveal video" data-video-external="1" data-video-poster="images/robotics/tusk.avif">
-              <span class="play-dot"><i class="ion-play"></i></span> Reveal video
-            </button>
+            <p class="robot-tba"><a href="https://www.thebluealliance.com/team/1986/2014" target="_blank" rel="noopener">Full 2014 results on The Blue Alliance <i class="ion-android-open"></i></a></p>
+            <div class="video-links">
+              <!-- This video is blocked from playing outside YouTube, so the pop-up links out instead. -->
+              <button type="button" class="video-link" data-video="sLlgDgQ-K70" data-video-title="Tusk (2014) · Reveal video" data-video-external="1" data-video-poster="images/robotics/tusk.avif">
+                <span class="play-dot"><i class="ion-play"></i></span> Reveal video
+              </button>
+              <button type="button" class="video-link" data-video="DfK0O2SA9OI" data-video-title="Tusk (2014) · Driver's-eye view">
+                <span class="play-dot"><i class="ion-play"></i></span> Robot's-eye view
+              </button>
+            </div>
           </div>
         </article>
 
@@ -709,7 +750,11 @@
               </div>
               <span class="robot-role">Team captain &amp; driver</span>
             </div>
-            <p>In Ultimate Ascent, robots shot flying discs into goals and climbed a pyramid at the end of the match. I captained the team and drove Kraken in competition.</p>
+            <p>My first season as team captain. I put in more than 300 hours over the six-week build season, with a big role in mechanical
+               design, prototyping, and fabrication, and I mentored younger students, teaching them how to use the machines in the shop.
+               In Ultimate Ascent, robots shot flying discs into goals and climbed a pyramid at the end of the match.</p>
+            <p>I drove Kraken, a dominant design: we lost only one match all regular season and won every regional we attended. I also drove
+               at our off-season events, which we won.</p>
             <div class="robot-results-title">Results <span class="robot-wins"><i class="ion-trophy"></i> 3× Regional Winner</span></div>
             <div class="rr">
               <div class="rr-event">
@@ -729,23 +774,32 @@
                 <div class="rr-chips"><span class="chip chip-strong"><i class="ion-trophy"></i> Newton Division Finalist</span><span class="chip">Engineering Excellence Award</span></div>
               </div>
             </div>
-            <button type="button" class="video-link" data-video="uKy-IKDq_6o" data-video-title="Kraken (2013) · Reveal video" data-video-poster="images/robotics/kraken.avif">
-              <span class="play-dot"><i class="ion-play"></i></span> Reveal video
-            </button>
+            <p class="robot-tba"><a href="https://www.thebluealliance.com/team/1986/2013" target="_blank" rel="noopener">Full 2013 results on The Blue Alliance <i class="ion-android-open"></i></a></p>
+            <div class="video-links">
+              <button type="button" class="video-link" data-video="uKy-IKDq_6o" data-video-title="Kraken (2013) · Reveal video" data-video-poster="images/robotics/kraken.avif">
+                <span class="play-dot"><i class="ion-play"></i></span> Reveal video
+              </button>
+              <button type="button" class="video-link" data-video="TdcKp_V9ISI" data-video-title="Kraken (2013) · Driver's-eye view">
+                <span class="play-dot"><i class="ion-play"></i></span> Robot's-eye view
+              </button>
+            </div>
           </div>
         </article>
 
         <article class="robot-card">
-          <img class="robot-photo" src="images/robotics/pegasus.avif" alt="Pegasus, Team 1986's 2012 FRC robot" loading="lazy">
+          <img class="robot-photo" src="images/robotics/pegasus.avif" alt="Titan Pegasus, Team 1986's 2012 FRC robot" loading="lazy">
           <div class="robot-body">
             <div class="robot-head">
               <div>
                 <div class="robot-year">2012 · Rebound Rumble</div>
-                <h4>Pegasus</h4>
+                <h4>Titan Pegasus</h4>
               </div>
-              <span class="robot-role">Mechanical subteam &amp; human player</span>
+              <span class="robot-role">Mechanical &amp; human player</span>
             </div>
-            <p>In Rebound Rumble, robots shot foam basketballs into hoops and balanced on bridges at the end of each match. I was on the mechanical subteam that designed and built Pegasus, and I was the team's human player in competition.</p>
+            <p>I got far more involved with the mechanical team, spending nearly every hour I wasn't in school at the build site and
+               contributing to the CAD design and fabrication. In Rebound Rumble, robots shot foam basketballs into hoops and balanced on bridges.
+               As human player I fed basketballs onto the field, then spent the last 30 seconds of each match throwing them across the field at the hoops.</p>
+            <p>In the off-season I became the team's driver and won my first event, going 14–1 at the CowTown Throwdown.</p>
             <div class="robot-results-title">Results <span class="robot-wins"><i class="ion-trophy"></i> 2× Regional Winner</span></div>
             <div class="rr">
               <div class="rr-event">
@@ -760,8 +814,13 @@
                 <div class="rr-name">FIRST Championship, Curie Division</div>
                 <div class="rr-chips"><span class="chip chip-muted">Competed</span></div>
               </div>
+              <div class="rr-event">
+                <div class="rr-name">CowTown Throwdown (off-season, me driving)</div>
+                <div class="rr-chips"><span class="chip chip-strong"><i class="ion-trophy"></i> Event Winner</span><span class="chip">14–1 record</span></div>
+              </div>
             </div>
-            <button type="button" class="video-link" data-video="wxVGk77nMH0" data-video-title="Pegasus (2012) · Gameplay video" data-video-poster="images/robotics/pegasus.avif">
+            <p class="robot-tba"><a href="https://www.thebluealliance.com/team/1986/2012" target="_blank" rel="noopener">Full 2012 results on The Blue Alliance <i class="ion-android-open"></i></a></p>
+            <button type="button" class="video-link" data-video="wxVGk77nMH0" data-video-title="Titan Pegasus (2012) · Gameplay video" data-video-poster="images/robotics/pegasus.avif">
               <span class="play-dot"><i class="ion-play"></i></span> Gameplay video
             </button>
           </div>
@@ -777,7 +836,11 @@
               </div>
               <span class="robot-role">Mechanical subteam</span>
             </div>
-            <p>In Logo Motion, robots hung inflatable shapes on a scoring grid and launched minibots to climb towers in the final seconds. I was on the mechanical subteam that designed and built Final Force.</p>
+            <p>My first build season. Like most freshmen I tried electrical, programming, and mechanical, and found my place helping the
+               mechanical team build the robot. I went to kickoff, helped work through the rules, brainstorm strategies, and propose designs,
+               and helped in the pits at every tournament. In Logo Motion, robots hung inflatable shapes on a scoring grid and launched
+               minibots to climb towers in the final seconds.</p>
+            <p>This was the season I fell in love with robotics, and it set me on the path toward science and technology that I'm still on today.</p>
             <div class="robot-results-title">Results </div>
             <div class="rr">
               <div class="rr-event">
@@ -793,8 +856,55 @@
                 <div class="rr-chips"><span class="chip chip-muted">Competed</span></div>
               </div>
             </div>
+            <p class="robot-tba"><a href="https://www.thebluealliance.com/team/1986/2011" target="_blank" rel="noopener">Full 2011 results on The Blue Alliance <i class="ion-android-open"></i></a></p>
             <button type="button" class="video-link" data-video="vNBUtAxtMOI" data-video-title="Final Force (2011) · Reveal video" data-video-poster="images/robotics/finalforce.avif">
               <span class="play-dot"><i class="ion-play"></i></span> Reveal video
+            </button>
+          </div>
+        </article>
+
+        <article class="robot-card">
+          <div class="panel-visual panel-visual-dark"><i class="ion-person-stalker"></i><span>Summer Camps &amp; Outreach</span></div>
+          <div class="robot-body">
+            <div class="robot-head">
+              <div>
+                <div class="robot-year">Off-season · 2011 – 2014</div>
+                <h4>Summer Camps &amp; Community</h4>
+              </div>
+              <span class="robot-role">Camp mentor</span>
+            </div>
+            <p>Every summer the team ran STEM camps, several a day for three weeks, for kids from first grade through middle school. I was there for
+               every session, spending hundreds of hours each summer mentoring kids.</p>
+            <ul class="robot-list">
+              <li><b>Robotics camp:</b> elementary students programmed LEGO Mindstorms robots to complete missions on FIRST LEGO League game tables.</li>
+              <li><b>Science camp:</b> hands-on experiments and activities in physics, biology, and chemistry that taught the scientific process.</li>
+              <li><b>Gears Are for Girls:</b> an all-girls camp to help get girls involved in STEM.</li>
+              <li><b>In the community:</b> our annual "Burgers, Beakers, and Bots" night at the high school, plus robot demos at parades, school assemblies, and the state fair.</li>
+            </ul>
+            <button type="button" class="video-link" data-video="ni84tWnxV-w" data-video-title="Team Titanium 2014 Chairman's video">
+              <span class="play-dot"><i class="ion-play"></i></span> 2014 Chairman's video (I'm in it)
+            </button>
+          </div>
+        </article>
+
+        <article class="robot-card">
+          <div class="panel-visual panel-visual-dark"><i class="ion-settings"></i><span>Mentoring &amp; Off-Season Builds</span></div>
+          <div class="robot-body">
+            <div class="robot-head">
+              <div>
+                <div class="robot-year">Year-round · 2011 – 2014</div>
+                <h4>Mentoring &amp; Off-Season</h4>
+              </div>
+              <span class="robot-role">Mentor</span>
+            </div>
+            <p>Throughout the school year I spent several nights a week mentoring younger teams:</p>
+            <ul class="robot-list">
+              <li><b>Four FIRST LEGO League teams</b> of 5th and 6th graders at the elementary school.</li>
+              <li><b>FTC Team Aluminum</b>, a FIRST Tech Challenge team of middle and high school students.</li>
+            </ul>
+            <p>Between build seasons we took our robots to off-season tournaments and built new machines for fun, like this walking robot.</p>
+            <button type="button" class="video-link" data-video="BFCof9_xsGk" data-video-title="Team Titanium off-season walking robot">
+              <span class="play-dot"><i class="ion-play"></i></span> Off-season walking robot
             </button>
           </div>
         </article>
@@ -905,16 +1015,16 @@
       <h5>Notable coursework</h5>
       <ul class="course-list">
         <li>Fundamentals of Robotics <span class="code">ENAS 773</span></li>
+        <li>Applied Numerical Methods for Differential Equations <span class="code">ENAS 748</span></li>
+        <li>Computer-Aided Engineering <span class="code">ENAS 600</span></li>
         <li>Applied Planning &amp; Optimization <span class="code">CPSC 585</span></li>
         <li>Introduction to Computer Vision <span class="code">CPSC 580</span></li>
-        <li>Deep Learning Theory &amp; Applications <span class="code">CPSC 552</span></li>
-        <li>Computer-Aided Engineering <span class="code">ENAS 600</span></li>
-        <li>Applied Numerical Methods for Differential Equations <span class="code">ENAS 748</span></li>
-        <li>Mathematical Methods I <span class="code">ENAS 500</span></li>
-        <li>Classical &amp; Statistical Thermodynamics <span class="code">ENAS 521</span></li>
-        <li>Biological Physics <span class="code">ENAS 541</span></li>
         <li>Molecular &amp; Cellular Biomechanics <span class="code">ENAS 556</span></li>
+        <li>Deep Learning Theory &amp; Applications <span class="code">CPSC 552</span></li>
+        <li>Biological Physics <span class="code">ENAS 541</span></li>
         <li>YData: Data Science <span class="code">S&amp;DS 523</span></li>
+        <li>Classical &amp; Statistical Thermodynamics <span class="code">ENAS 521</span></li>
+        <li>Mathematical Methods I <span class="code">ENAS 500</span></li>
       </ul>
 
       <h5>Teaching &amp; community</h5>
@@ -941,24 +1051,28 @@
 
       <h5>Notable coursework</h5>
       <ul class="course-list">
-        <li>Quantum Mechanics I <span class="code">PHYS 5301</span></li>
-        <li>Introduction to Quantum Mechanics <span class="code">PHYS 4301</span></li>
-        <li>Electricity &amp; Magnetism I &amp; II <span class="code">PHYS 3211, 4211</span></li>
-        <li>Physical Mechanics <span class="code">PHYS 3201</span></li>
-        <li>Chaos &amp; Dynamics <span class="code">PHYS 5413</span></li>
-        <li>Thermal Physics <span class="code">PHYS 4311</span></li>
-        <li>Elementary Solid State Physics <span class="code">PHYS 4323</span></li>
-        <li>Laser Physics <span class="code">PHYS 4513</span></li>
-        <li>Modern Physics I &amp; II <span class="code">PHYS 2305, 3311</span></li>
-        <li>Introduction to Theoretical Physics <span class="code">PHYS 2401</span></li>
-        <li>Advanced Physics Lab I &amp; II <span class="code">PHYS 3119, 3129</span></li>
+        <li>Chaos Theory and Nonlinear Dynamics <span class="code">PHYS 5413</span></li>
         <li>Partial Differential Equations <span class="code">MATH 5325</span></li>
-        <li>Linear Algebra I <span class="code">MATH 3108</span></li>
-        <li>Engineering Statistics <span class="code">STAT 3115</span></li>
-        <li>MATLAB Programming <span class="code">COMP SCI 1972</span></li>
-        <li>Statics <span class="code">CIV ENG 2200</span></li>
+        <li>Quantum Mechanics I <span class="code">PHYS 5301</span></li>
+        <li>Laser Physics <span class="code">PHYS 4513</span></li>
+        <li>Philosophy of Science <span class="code">PHILOS 4345</span></li>
+        <li>Elementary Solid State Physics <span class="code">PHYS 4323</span></li>
+        <li>Minds &amp; Machines <span class="code">PHILOS 4320</span></li>
+        <li>Thermal Physics <span class="code">PHYS 4311</span></li>
+        <li>Introduction to Quantum Mechanics <span class="code">PHYS 4301</span></li>
+        <li>Electricity &amp; Magnetism II <span class="code">PHYS 4211</span></li>
+        <li>Modern Physics II <span class="code">PHYS 3311</span></li>
+        <li>Electricity &amp; Magnetism I <span class="code">PHYS 3211</span></li>
         <li>Introduction to Geophysics <span class="code">GEOPHYS 3210</span></li>
-        <li>Philosophy of Science; Minds &amp; Machines <span class="code">PHILOS 4345, 4320</span></li>
+        <li>Physical Mechanics <span class="code">PHYS 3201</span></li>
+        <li>Advanced Physics Lab II <span class="code">PHYS 3129</span></li>
+        <li>Advanced Physics Lab I <span class="code">PHYS 3119</span></li>
+        <li>Engineering Statistics <span class="code">STAT 3115</span></li>
+        <li>Linear Algebra I <span class="code">MATH 3108</span></li>
+        <li>Introduction to Theoretical Physics <span class="code">PHYS 2401</span></li>
+        <li>Introduction to Modern Physics <span class="code">PHYS 2305</span></li>
+        <li>Statics <span class="code">CIV ENG 2200</span></li>
+        <li>MATLAB Programming <span class="code">COMP SCI 1972</span></li>
       </ul>
 
       <h5>Activities</h5>
@@ -988,6 +1102,14 @@
         <li>Completed the Project Lead the Way (PLTW) engineering curriculum, with specialty courses taken off campus at Summit Technology Academy during junior and senior years</li>
         <li>Early college coursework in electronics and mathematics</li>
       </ul>
+
+      <h5>Relevant coursework</h5>
+      <ul>
+        <li>Project Lead the Way: Introduction to Engineering Design (IED), Principles of Engineering (POE), Civil Engineering and Architecture (CEA),
+            Computer Integrated Manufacturing (CIM), Digital Electronics (DE), Engineering Capstone, and Engineering Design and Development (EDD)</li>
+        <li>Calculus I (senior year)</li>
+        <li>AP Physics</li>
+      </ul>
       <p><a href="#first-robotics" class="smoothScroll" data-close-modal>See my FIRST robots →</a></p>
     </div>
   </div>
@@ -1013,8 +1135,17 @@
             a wastewater treatment plant and completed coursework in fluid dynamics.</li>
         <li><b>Engineering Design and Development (EDD)</b> (spring semester). Designed, developed, and engineered a product from concept to fabrication,
             then presented it to a panel of engineers from firms including Burns &amp; McDonnell, Garmin, Honeywell, and Black &amp; Veatch, as well as city engineers.
-            <span class="todo">[Optional: what the product was.]</span></li>
+            My product was the <b>Grab and Go</b>, a walking cane combined with a grabber: four 3D-printed legs on a motor-driven spring mechanism
+            close around an item to pick it up, then spring back open once it's lifted.
+            <!-- TODO(cameron): add Grab and Go photos / CAD renders when you find them --></li>
       </ul>
+      <p>My PLTW coursework also included Introduction to Engineering Design (IED), Principles of Engineering (POE), and Civil Engineering and Architecture (CEA).
+         EDD was a custom course offered by STA, not part of the standard PLTW curriculum.</p>
+
+      <h5>Burns &amp; McDonnell Battle of the Brains · 2nd place (2014)</h5>
+      <p>My class, led by me and one of my classmates, entered a proposal for a new exhibit at Science City in Kansas City. I built the
+         complete CAD model of our exhibit, "Wright into the Future." It took second place among thousands of entries from across the Kansas City
+         area and won our school $5,000. <a href="#" data-modal="battleBrainsModal">More →</a></p>
 
       <p>STA's programs have been recognized by President Obama, who in a July 2013 speech
          <a href="https://www.kbia.org/politics/2013-07-24/obama-praises-missouri-innovation-campus-program" target="_blank" rel="noopener">praised the Missouri Innovation Campus program</a>
@@ -1086,9 +1217,20 @@
     <div class="modal-content">
       <span class="close" aria-label="Close">&times;</span>
       <h2 id="teachingModalTitle">Teaching Fellow, Yale University</h2>
-      <div class="modal-meta">MENG 383: Mechanical Engineering III (Dynamics) &nbsp;•&nbsp; Fall 2020</div>
-      <p>Teaching Fellow for Yale's undergraduate dynamics course with Prof. Corey O'Hern, as part of Yale's Teaching Fellow Program.
-        <span class="todo">[What you did: sections, office hours, grading, etc.]</span></p>
+      <div class="modal-meta">Yale School of Engineering &amp; Applied Science &nbsp;•&nbsp; Yale Teaching Fellow Program</div>
+
+      <h5>MENG 383: Mechanical Engineering III (Dynamics) · Prof. Corey O'Hern · Fall 2020</h5>
+      <ul>
+        <li>Teaching Fellow for this senior-level mechanical engineering dynamics course.</li>
+        <li>Held office hours twice a week.</li>
+        <li>Graded homework and exams.</li>
+      </ul>
+
+      <h5>Introduction to controls · Prof. Ian Abraham</h5>
+      <!-- TODO(cameron): add the course number and semester -->
+      <ul>
+        <li>Mentored undergraduate students on their robotics projects throughout the semester.</li>
+      </ul>
     </div>
   </div>
 
@@ -1096,10 +1238,19 @@
     <div class="modal-content">
       <span class="close" aria-label="Close">&times;</span>
       <h2 id="gecoModalTitle">Graduate Engineering Community Organization (GECO)</h2>
-      <div class="modal-meta">TGIF and Project Manager &nbsp;•&nbsp; Yale School of Engineering &amp; Applied Science &nbsp;•&nbsp; <span class="todo">[dates]</span></div>
-      <p>GECO was founded in 2021 with the support of the SEAS Dean's Office to build community and mentorship across Yale's
-         engineering graduate programs. It hosts events such as the monthly TGIF dinners and happy hours, breakfasts, and board game nights.</p>
-      <p class="todo">[What you managed as TGIF and Project Manager: e.g. planning the monthly TGIFs, budgets, vendors, attendance, or projects you led.]</p>
+      <div class="modal-meta">Activities Coordinator, TGIF Manager &amp; Project Manager &nbsp;•&nbsp; 2022 – 2025 &nbsp;•&nbsp; Yale School of Engineering &amp; Applied Science</div>
+      <p>GECO was started in 2022 by my good friend Ethen Lund, at first to put together a dedicated lounge for engineering graduate students.
+         It soon became much more. We hosted events for the entire School of Engineering &amp; Applied Science (SEAS), across all five departments,
+         to build community and a sense of belonging for engineering students at Yale. Events ranged from monthly TGIFs with catered food,
+         drinks, and outdoor games to bake-offs and the annual SEAS tailgate for The Game (Harvard vs. Yale).</p>
+      <ul>
+        <li>Was there from the start: helped pick out the furniture for the Mann Engineering Student Lounge and set up the space.</li>
+        <li>Helped run our monthly TGIF events.</li>
+        <li>Co-hosted the annual Paint-a-Pot and Plant-a-Plant event: picked out house plants and pots for students to decorate, then taught them how to pot their new plant and care for it.</li>
+        <li>Hosted Nintendo Switch game nights and board game nights, with snacks, in the student lounge.</li>
+        <li>Co-hosted the annual SEAS tailgate for The Game.</li>
+        <li>Helped the other activities coordinators with their events.</li>
+      </ul>
       <p><a href="https://geco.sites.yale.edu/" target="_blank" rel="noopener">GECO website</a></p>
     </div>
   </div>
@@ -1130,8 +1281,8 @@
       <ul>
         <li>Became a member during my 2018 Summer Undergraduate Research Fellowship in Prof. Corey O'Hern's group at Yale.</li>
         <li>Presented "Encoding Multidirectional Memory in Sheared Amorphous Solids" at the Leadership Alliance National Symposium in Hartford, CT (July 27, 2018).</li>
+        <li>Took part in the symposium's professional development program.</li>
       </ul>
-      <p class="todo">[Optional: any later involvement, e.g. mentoring, TLA Connect, or other symposia.]</p>
       <p><a href="https://theleadershipalliance.org/" target="_blank" rel="noopener">The Leadership Alliance website</a></p>
     </div>
   </div>
@@ -1142,24 +1293,48 @@
       <h2 id="mstResearchModalTitle">Undergraduate Research, Missouri S&amp;T</h2>
       <div class="modal-meta">August 2016 – May 2019 &nbsp;•&nbsp; Rolla, MO</div>
 
-      <h5>Monte Carlo simulations of diluted hexaferrites · Dr. Thomas Vojta &amp; Dr. Julia Medvedeva (2017 – 2019)</h5>
+      <h5>Monte Carlo Simulations of the Magnetic Behavior of Diluted Hexaferrites · Dr. Thomas Vojta &amp; Dr. Julia Medvedeva · Aug 2017 – May 2019</h5>
       <ul>
-        <li>Performed realistic, parallelized Monte Carlo simulations of diluted hexaferrites and mapped the shape of the ferrimagnetic–paramagnetic phase boundary.</li>
-        <li>Presented at the 2018 and 2019 APS March Meetings and to state legislators at the 2019 Missouri Undergraduate Research Day at the Capitol.</li>
-        <li>Won 1st place at the 47th annual and runner-up at the 48th annual Missouri S&amp;T Fuller Poster Competition.</li>
+        <li>Performed realistic Monte Carlo simulations of diluted hexaferrites.</li>
+        <li>Programmed parallelized code to run large-scale simulations.</li>
+        <li>Researched the shape of the ferrimagnetic–paramagnetic phase boundary.</li>
+        <li>Presented results at the 2018 and 2019 APS March Meetings, and to state legislators at the 2019 Missouri Undergraduate Research Day at the Capitol.</li>
+        <li>Won first place at the 47th annual and runner-up at the 48th annual Missouri S&amp;T Fuller Poster Competition.</li>
+        <li>Published results in the European Physical Journal B and Physical Review B.</li>
       </ul>
+      <!-- TODO(cameron): swap these for poster PDFs when you have them -->
+      <div class="modal-figs">
+        <figure><a href="images/projects/poster-fuller-hexaferrites.jpg" target="_blank" rel="noopener"><img src="images/projects/poster-fuller-hexaferrites.jpg" alt="Poster: Monte Carlo Simulations of the Magnetic Behavior of Diluted Hexaferrites" loading="lazy"></a>
+          <figcaption>Poster: Monte Carlo Simulations of the Magnetic Behavior of Diluted Hexaferrites</figcaption></figure>
+        <figure><a href="images/projects/poster-disorder-and-dynamics.jpg" target="_blank" rel="noopener"><img src="images/projects/poster-disorder-and-dynamics.jpg" alt="Poster: Disorder and Dynamics of Quantum Materials" loading="lazy"></a>
+          <figcaption>Poster: Disorder and Dynamics of Quantum Materials (Research Day at the Capitol, 2019)</figcaption></figure>
+      </div>
 
-      <h5>Orbital angular momentum of light · Dr. Daniel Fischer (2017 – 2018)</h5>
+      <h5>Effects of Diffraction Gratings on Generating Orbital Angular Momentum · Dr. Daniel Fischer · Jan 2017 – May 2018</h5>
       <ul>
-        <li>Worked in the Laboratory for Atomic, Molecular, and Optical Research (LAMOR) with high-powered lasers and optics.</li>
-        <li>Used a laser, spatial light modulator, camera, and optics to measure how different diffraction gratings shaped the output intensity and beam profile.</li>
-        <li>Generated and fine-tuned diffraction gratings in MATLAB.</li>
+        <li>Worked on a variety of research in Dr. Fischer's Laboratory for Atomic, Molecular, and Optical Research (LAMOR).</li>
+        <li>Gained hands-on experience with high-powered lasers and optics.</li>
+        <li>Investigated orbital angular momentum of light and how this optical property could be used in other areas of Dr. Fischer's research.</li>
+        <li>Used a laser, a light modulator, a camera, and various optics to measure how different diffraction gratings affected the output intensity and beam profile of the laser light.</li>
+        <li>Used MATLAB to generate and fine-tune the diffraction gratings displayed on the light modulator.</li>
       </ul>
+      <div class="modal-figs">
+        <figure><a href="images/projects/optics-setup.jpg" target="_blank" rel="noopener"><img src="images/projects/optics-setup.jpg" alt="Optics bench setup" loading="lazy"></a>
+          <figcaption>The optical setup</figcaption></figure>
+        <figure><a href="images/projects/optics-oam.jpg" target="_blank" rel="noopener"><img src="images/projects/optics-oam.jpg" alt="Ring-shaped laser output carrying orbital angular momentum" loading="lazy"></a>
+          <figcaption>Output after reflecting the laser off an LCD showing a custom diffraction grating. The grating gives the photons orbital
+            angular momentum, leaving a void at the center and concentrating the light in a ring at the wavefront.</figcaption></figure>
+        <figure><a href="images/projects/optics-doubleslit.jpg" target="_blank" rel="noopener"><img src="images/projects/optics-doubleslit.jpg" alt="Double-slit pattern" loading="lazy"></a>
+          <figcaption>Double-slit pattern</figcaption></figure>
+      </div>
 
-      <h5>Superfluid–Mott glass quantum phase transition · Dr. Thomas Vojta (2016 – 2017)</h5>
+      <h5>Superfluid Density and Compressibility at the Superfluid–Mott Glass Transition · Dr. Thomas Vojta · Aug 2016 – Aug 2017</h5>
       <ul>
-        <li>Incorporated the stiffness parameter into existing models of the insulator–superfluid quantum phase transition.</li>
-        <li>Ran large system sizes on the Pegasus IV high-performance cluster and fit the results to extract the superfluid stiffness.</li>
+        <li>Assisted Dr. Vojta with his research on quantum phase transitions, focusing on the transition from an insulator to a superfluid.</li>
+        <li>Incorporated the stiffness parameter into several existing models of this phase transition.</li>
+        <li>Used the Pegasus IV high-performance cluster to run large system sizes and generate data.</li>
+        <li>Plotted and fit the data in gnuplot to extract the value of the stiffness.</li>
+        <li>Published results in the European Physical Journal Special Topics and Physical Review B.</li>
       </ul>
 
       <p><a href="#publications" class="smoothScroll" data-close-modal>Resulting publications →</a></p>
@@ -1222,9 +1397,10 @@
         <li><b>Drone demonstrations:</b> created live multi-drone demos for students visiting the lab.</li>
         <li><b>Research mentoring:</b> mentored incoming researchers in the lab.</li>
         <li><b>Astronomy nights:</b> helped lead public observing events for community members and their families as co-founder of the Missouri S&amp;T Astronomical Research Society.</li>
-        <li><b>FIRST:</b> volunteered more than 1,000 hours mentoring younger students through FIRST programs and summer camps.</li>
+        <li><b>FIRST (2010 – 2014):</b> volunteered more than 1,000 hours: summer STEM camps (including the all-girls Gears Are for Girls camp),
+            mentoring four FIRST LEGO League teams and FTC Team Aluminum, and community events like "Burgers, Beakers, and Bots."</li>
       </ul>
-      <p class="todo">[Optional: dates, links, or photos for any of these.]</p>
+      <p><a href="#first-robotics" class="smoothScroll" data-close-modal>More in the FIRST section →</a></p>
     </div>
   </div>
 
@@ -1247,6 +1423,10 @@
       <p>Presented "Monte Carlo Simulations of the Magnetic Behavior of Diluted Hexaferrites," my research with Dr. Thomas Vojta and
          Dr. Julia Medvedeva, at Missouri S&amp;T's annual Fuller undergraduate poster competition. It won first place at the 47th
          annual competition and runner-up at the 48th.</p>
+      <div class="modal-figs">
+        <figure><a href="images/projects/poster-fuller-hexaferrites.jpg" target="_blank" rel="noopener"><img src="images/projects/poster-fuller-hexaferrites.jpg" alt="Fuller competition poster" loading="lazy"></a>
+          <figcaption>The poster (click to enlarge)</figcaption></figure>
+      </div>
     </div>
   </div>
 
@@ -1255,8 +1435,12 @@
       <span class="close" aria-label="Close">&times;</span>
       <h2 id="capitolModalTitle">Undergraduate Research Day at the Capitol</h2>
       <div class="modal-meta">Selected participant &nbsp;•&nbsp; Jefferson City, MO &nbsp;•&nbsp; 2019</div>
-      <p>Selected to present "Monte Carlo Simulations of the Magnetic Behavior of Diluted Hexaferrites" to Missouri state legislators
-         at the State Capitol.</p>
+      <p>Selected to present my poster "Disorder and Dynamics of Quantum Materials," my research with Dr. Thomas Vojta on diluted
+         magnetic materials, to Missouri state legislators at the State Capitol.</p>
+      <div class="modal-figs">
+        <figure><a href="images/projects/poster-disorder-and-dynamics.jpg" target="_blank" rel="noopener"><img src="images/projects/poster-disorder-and-dynamics.jpg" alt="Poster: Disorder and Dynamics of Quantum Materials" loading="lazy"></a>
+          <figcaption>The poster (click to enlarge)</figcaption></figure>
+      </div>
     </div>
   </div>
 
@@ -1272,10 +1456,17 @@
   <div id="astroModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="astroModalTitle">
     <div class="modal-content">
       <span class="close" aria-label="Close">&times;</span>
-      <h2 id="astroModalTitle">S&amp;T Astronomical Research Society</h2>
-      <div class="modal-meta">Co-founder &amp; Vice President &nbsp;•&nbsp; Missouri S&amp;T &nbsp;•&nbsp; <span class="todo">[dates]</span></div>
-      <p>Co-founded the Missouri S&amp;T Astronomical Research Society and helped lead public observing events for community members and their families.</p>
-      <p class="todo">[Anything else you led as VP.]</p>
+      <h2 id="astroModalTitle">Missouri S&amp;T Astronomical Research Society (STARS)</h2>
+      <div class="modal-meta">Co-founder &amp; Vice President &nbsp;•&nbsp; September 2016 – May 2018 &nbsp;•&nbsp; Missouri S&amp;T</div>
+      <p>I helped found and run Missouri S&amp;T's Astronomical Research Society, a group of astronomy-loving students from across campus.
+         Members met once a week, taking turns presenting something related to astronomy. When the weather was right we hosted viewing
+         events at the on-campus observatory, which drew a mix of students and families from the local community.</p>
+      <ul>
+        <li>Communicated with members each week about meeting times, events, and announcements.</li>
+        <li>Coordinated community outreach events at Missouri S&amp;T's observatory.</li>
+        <li>Managed the society's equipment, including the telescope and astronomy textbooks.</li>
+        <li>Kept the society's Facebook and other social media pages up to date.</li>
+      </ul>
     </div>
   </div>
 
@@ -1285,10 +1476,10 @@
       <h2 id="firstModalTitle">FIRST Robotics Competition: Team 1986, Team Titanium</h2>
       <div class="modal-meta">2010 – 2014 &nbsp;•&nbsp; Mechanical subteam, then Team Captain &amp; Driver &nbsp;•&nbsp; Lee's Summit, MO</div>
       <ul>
-        <li>2011 and 2012 seasons: on the mechanical subteam, designing, manufacturing, and refining competition robots during each build season. In 2012 I was also the team's human player.</li>
+        <li>2011 and 2012 seasons: on the mechanical subteam, designing, manufacturing, and refining competition robots during each build season. In 2012 I was also the team's human player, and in the off-season I became the driver and won the CowTown Throwdown (14–1).</li>
         <li>2013 and 2014 seasons: team captain and the robot's driver in competition.</li>
         <li>As captain and driver: five regional wins (Hub City, Greater Kansas City, and Oklahoma in 2013; Central Illinois and Greater Kansas City in 2014) and a Newton Division Finalist finish at the 2013 FIRST Championship.</li>
-        <li>Volunteered more than 1,000 hours mentoring younger students through FIRST programs and summer camps.</li>
+        <li>Volunteered more than 1,000 hours: summer STEM camps every year, four FIRST LEGO League teams, and FTC Team Aluminum.</li>
         <li>Named a 2014 FIRST Dean's List Finalist.</li>
       </ul>
       <p>
@@ -1313,11 +1504,29 @@
     <div class="modal-content">
       <span class="close" aria-label="Close">&times;</span>
       <h2 id="nhsModalTitle">National Honor Society</h2>
-      <div class="modal-meta">Lee's Summit West High School &nbsp;•&nbsp; <span class="todo">[years]</span></div>
+      <div class="modal-meta">Lee's Summit West High School &nbsp;•&nbsp; 2013 – 2014</div>
       <p>Member of the National Honor Society, which recognizes students for scholarship, service, leadership, and character.</p>
     </div>
   </div>
 
+
+  <div id="battleBrainsModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="battleBrainsModalTitle">
+    <div class="modal-content">
+      <span class="close" aria-label="Close">&times;</span>
+      <h2 id="battleBrainsModalTitle">Burns &amp; McDonnell Battle of the Brains</h2>
+      <div class="modal-meta">2nd place &nbsp;•&nbsp; 2014 &nbsp;•&nbsp; Summit Technology Academy</div>
+      <p style="text-align:center"><img src="images/logos/battle-of-the-brains.png" alt="Burns &amp; McDonnell Battle of the Brains" style="max-width:320px;width:100%"></p>
+      <p>Battle of the Brains is Burns &amp; McDonnell's STEM competition in which students from across the Kansas City area propose a new
+         exhibit for Science City at Union Station. My class at Summit Technology Academy, led by me and one of my classmates, put together
+         our submission, "Wright into the Future," and I developed the entire CAD model of the exhibit.</p>
+      <p>Our entry took <b>second place</b>, standing out among thousands of entries and winning our school <b>$5,000</b>.</p>
+      <!-- TODO(cameron): add a render or screenshot of the "Wright into the Future" CAD model if you find it -->
+      <p>
+        <a href="https://sciencecity.unionstation.org/2014/01/28/battle-of-the-brains-winners-announced/" target="_blank" rel="noopener">2014 winners announcement</a> &nbsp;·&nbsp;
+        <a href="https://www.burnsmcd.com/news/top-20-battle-of-the-brains-stem-competition-2023" target="_blank" rel="noopener">About Battle of the Brains</a>
+      </p>
+    </div>
+  </div>
 
   <!-- JavaScript Libraries -->
   <script src="lib/jquery/jquery.min.js"></script>
@@ -1329,8 +1538,8 @@
   <script src="lib/isotope/isotope.pkgd.min.js"></script>
 
   <!-- Template Main Javascript File -->
-  <script src="js/main.js?v=20261109n"></script>
-  <script src="js/site.js?v=20261109n"></script>
+  <script src="js/main.js?v=20261110a"></script>
+  <script src="js/site.js?v=20261110a"></script>
 
 </body>
 
