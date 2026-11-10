@@ -34,7 +34,11 @@
   }
 
   document.querySelectorAll('[data-modal]').forEach(function (el) {
-    el.addEventListener('click', function () { openModal(el.getAttribute('data-modal'), el); });
+    el.addEventListener('click', function (e) {
+      // the "Details" link on an Experience tile goes to its page instead of opening the pop-up
+      if (e.target.closest && e.target.closest('.tile-details')) return;
+      openModal(el.getAttribute('data-modal'), el);
+    });
     el.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();

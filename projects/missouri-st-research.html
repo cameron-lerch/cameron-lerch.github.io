@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undergraduate Research at Missouri S&amp;T · Cameron Lerch</title>
+  <meta name="description" content="Undergraduate research in computational and optical physics at Missouri S&T.">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,600|Playfair+Display:700&display=swap" rel="stylesheet">
+  <link href="../lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="../css/custom.css?v=20261110g" rel="stylesheet">
+  <link href="../css/project.css?v=20261110g" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/brand/favicon-32.png">
+  <link rel="apple-touch-icon" href="../images/brand/apple-touch-icon.png">
+</head>
+<body>
+
+  <nav class="project-nav">
+    <div class="inner">
+      <a href="../index.html" class="brand" aria-label="Cameron Lerch home">
+        <span class="brand-mark">CL</span><span class="brand-name">Cameron Lerch</span>
+      </a>
+      <a href="../index.html#portfolio" class="back"><i class="ion-ios-arrow-back"></i>&nbsp; All experience</a>
+    </div>
+  </nav>
+
+  <header class="project-hero">
+    <div class="inner">
+      <div class="demo-tag">Research · Missouri S&amp;T</div>
+      <h1>Undergraduate Research</h1>
+      <p class="lede">Three years of physics research at Missouri S&amp;T: magnetism in diluted hexaferrites, a quantum phase transition, and the orbital angular momentum of light.</p>
+      <div class="demo-links">
+          <a href="../index.html#publications"><i class="ion-document-text"></i> Publications</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="project-body">
+    <div class="project-grid">
+      <div>
+      <nav class="page-toc">
+        <a href="#hexaferrites">Diluted hexaferrites</a>
+        <a href="#orbital-angular-momentum">Orbital angular momentum of light</a>
+        <a href="#superfluid">Superfluid–Mott glass transition</a>
+      </nav>
+
+      <h2 id="hexaferrites">Magnetic Behavior of Diluted Hexaferrites</h2>
+      <p class="section-meta">Dr. Thomas Vojta &amp; Dr. Julia Medvedeva · August 2017 – May 2019</p>
+      <p>Hexaferrites such as BaFe<sub>12</sub>O<sub>19</sub>, SrFe<sub>12</sub>O<sub>19</sub>, and PbFe<sub>12</sub>O<sub>19</sub> are ferrimagnets
+         with Néel temperatures around 720&nbsp;K, used in everything from magnetic stripes and barcodes to small motors and microwave devices.
+         Substituting non-magnetic gallium for iron in PbFe<sub>12−x</sub>Ga<sub>x</sub>O<sub>19</sub> suppresses the ordering temperature, and
+         experiments show it following a 2/3 power law, T<sub>N</sub> ∼ (1 − x/x<sub>c</sub>)<sup>2/3</sup>, over the entire temperature range, which is
+         unexpected. Our goal was to understand where the shape of this phase boundary comes from.</p>
+      <h3>What I did</h3>
+      <ul>
+        <li>Performed realistic Monte Carlo simulations of diluted hexaferrites: a Heisenberg model on the real crystal structure, with exchange
+            interactions calculated from first principles, using Wolff and Metropolis updates.</li>
+        <li>Programmed parallelized code to run large-scale simulations, up to 40³ double unit cells (1,536,000 spins), averaged over many disorder configurations.</li>
+        <li>Located the critical temperatures from Binder cumulant crossings and mapped the ferrimagnetic–paramagnetic phase boundary.</li>
+        <li>Compared against a simple site-diluted cubic lattice model (up to 80³ = 512,000 spins).</li>
+      </ul>
+      <h3>What we found</h3>
+      <p>The critical concentration x<sub>c</sub> agrees with percolation theory. But neither the leading, unfrustrated interactions nor added
+         sub-leading, frustrated interactions reproduce the experimental 2/3 power law, and on the cubic lattice we found an exponent close to 1.
+         A simple magnetic percolation picture doesn't explain the phase boundary, which leaves room for other effects: a non-uniform distribution
+         of the Ga ions, interplay between magnetism and ferroelectricity, or dilution-dependent interactions.</p>
+      <h3>Presentations &amp; awards</h3>
+      <ul>
+        <li>APS March Meeting 2018 (Los Angeles) and 2019 (Boston)</li>
+        <li>Missouri Undergraduate Research Day at the Capitol, 2019: presented "Disorder and Dynamics of Quantum Materials" to state legislators</li>
+        <li>Missouri S&amp;T Fuller Poster Competition: <b>1st place</b> (47th annual) and <b>runner-up</b> (48th annual)</li>
+      </ul>
+      <h3>Publications</h3>
+      <ul>
+        <li>L. Sowadski, S. Anderson, <b>C. Lerch</b>, J. Medvedeva, T. Vojta, "Magnetic Properties of Diluted Hexaferrites,"
+            <a href="https://doi.org/10.1103/PhysRevB.110.014432" target="_blank" rel="noopener">Phys. Rev. B 110, 014432 (2024)</a></li>
+        <li>G. Khairnar, <b>C. Lerch</b>, T. Vojta, "Phase Boundary Near a Magnetic Percolation Transition,"
+            <a href="https://doi.org/10.1140/epjb/s10051-021-00056-4" target="_blank" rel="noopener">Eur. Phys. J. B 94, 43 (2021)</a></li>
+      </ul>
+      <div class="gallery">
+        <figure><img src="../images/projects/poster-fuller-hexaferrites.jpg" alt="Poster: Monte Carlo Simulations of the Magnetic Behavior of Diluted Hexaferrites (Fuller Poster Competition)" loading="lazy"><figcaption>Poster: Monte Carlo Simulations of the Magnetic Behavior of Diluted Hexaferrites (Fuller Poster Competition)</figcaption></figure>
+        <figure><img src="../images/projects/poster-disorder-and-dynamics.jpg" alt="Poster: Disorder and Dynamics of Quantum Materials (Research Day at the Capitol, 2019)" loading="lazy"><figcaption>Poster: Disorder and Dynamics of Quantum Materials (Research Day at the Capitol, 2019)</figcaption></figure>
+      </div>
+
+      <h2 id="orbital-angular-momentum">Diffraction Gratings and the Orbital Angular Momentum of Light</h2>
+      <p class="section-meta">Dr. Daniel Fischer · Laboratory for Atomic, Molecular, and Optical Research (LAMOR) · January 2017 – May 2018</p>
+      <ul>
+        <li>Worked with Dr. Fischer on a variety of research in his Laboratory for Atomic, Molecular, and Optical Research.</li>
+        <li>Gained hands-on experience with high-powered lasers and optics.</li>
+        <li>Investigated orbital angular momentum and how this optical property could be used in other areas of Dr. Fischer's research.</li>
+        <li>Used a laser, a light modulator, a camera, and various optics to measure how different diffraction gratings affected the output
+            intensity and beam profile of the laser light.</li>
+        <li>Used MATLAB to generate and fine-tune the diffraction gratings displayed on the light modulator.</li>
+      </ul>
+      <div class="gallery">
+        <figure><img src="../images/projects/optics-setup.jpg" alt="The optical setup" loading="lazy"><figcaption>The optical setup</figcaption></figure>
+        <figure><img src="../images/projects/optics-oam.jpg" alt="Ring-shaped laser output carrying orbital angular momentum" loading="lazy"><figcaption>Output after reflecting the laser off an LCD showing a custom diffraction grating. The grating gives the photons orbital angular momentum, leaving a void at the center and concentrating the light in a ring at the wavefront.</figcaption></figure>
+        <figure><img src="../images/projects/optics-doubleslit.jpg" alt="Double-slit pattern" loading="lazy"><figcaption>Double-slit pattern</figcaption></figure>
+      </div>
+
+      <h2 id="superfluid">Superfluid Density and Compressibility at the Superfluid–Mott Glass Transition</h2>
+      <p class="section-meta">Dr. Thomas Vojta · August 2016 – August 2017</p>
+      <ul>
+        <li>Assisted Dr. Vojta with his research on quantum phase transitions, focusing on the transition from an insulator to a superfluid.</li>
+        <li>Incorporated the stiffness parameter into several existing models of this phase transition.</li>
+        <li>Used the Pegasus IV high-performance cluster to run large system sizes and generate data.</li>
+        <li>Plotted and fit the data in gnuplot to extract the value of the stiffness.</li>
+      </ul>
+      <h3>Publications &amp; presentations</h3>
+      <ul>
+        <li><b>C. Lerch</b>, T. Vojta, "Superfluid Density and Compressibility at the Superfluid–Mott Glass Transition,"
+            <a href="https://doi.org/10.1140/epjst/e2018-800002-2" target="_blank" rel="noopener">Eur. Phys. J. Special Topics 227, 2275 (2019)</a></li>
+        <li>J. Crewse, <b>C. Lerch</b>, T. Vojta, "Quantum Critical Behavior of a Three-Dimensional Superfluid–Mott Glass Transition,"
+            <a href="https://doi.org/10.1103/PhysRevB.98.054514" target="_blank" rel="noopener">Phys. Rev. B 98, 054514 (2018)</a></li>
+        <li>APS March Meeting 2018, Los Angeles</li>
+      </ul>
+      </div>
+      <aside class="project-facts">
+      <h3>Dates</h3><p>August 2016 – May 2019</p>
+      <h3>Location</h3><p>Rolla, MO</p>
+      <h3>Advisors</h3><p>Dr. Thomas Vojta · Dr. Julia Medvedeva · Dr. Daniel Fischer</p>
+      <h3>Tools</h3><p>Monte Carlo simulation · HPC clusters · MATLAB · gnuplot · lasers &amp; optics</p>
+      <h3>Honors</h3><p>Fuller Poster Competition 1st place &amp; runner-up · Research Day at the Capitol 2019</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="project-footer">
+    <a href="../index.html#portfolio">← All experience</a> &nbsp;·&nbsp;
+    <a href="mailto:cameron.lerch@gmail.com">cameron.lerch@gmail.com</a>
+  </footer>
+
+  <script src="../js/site.js?v=20261110g"></script>
+</body>
+</html>
