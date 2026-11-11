@@ -568,3 +568,20 @@ a.video-link:hover { color: var(--gold); }
 }
 #tutoring .first-intro { margin-bottom: 16px; }
 #tutoring .first-intro:last-of-type { margin-bottom: 36px; }
+
+/* ---------- Phones: keep columns centered ----------
+   The template shrinks every column to 85% on small screens without centering it,
+   which pushed the Experience tiles and other blocks to the left. Use full width instead. */
+@media (max-width: 768px) {
+  [class*="col-"] { max-width: 100%; }
+}
+
+/* Experience tiles: size to their content (image + Details button) instead of the template's
+   fixed 260px box with negative margin, which hid the button behind the next tile on phones. */
+.portfolio-thumbnail { min-height: 0; margin-bottom: 0; padding-bottom: 26px; overflow: visible; }
+
+@media (max-width: 991px) {
+  /* headshot: line the photo up with its frame and center both */
+  #about .div-img-bg { max-width: 340px; margin: 50px auto 40px; }
+  #about .div-img-bg .about-img img { margin-left: 0; margin-top: -40px; height: 380px; }
+}
