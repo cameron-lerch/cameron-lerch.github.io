@@ -754,12 +754,6 @@ a.scholar-link:hover { border-color: var(--gold); color: var(--gold); text-decor
 .video-link.vid-pill:hover .pill-play { background: #fff; }
 .video-link.vid-pill:hover .pill-play i { color: var(--gold); }
 
-/* The Blue Alliance link: a clear full-width button */
-.tba-btn, .tba-btn:visited {
-  display: block; margin-top: 12px; padding: 8px 12px; text-align: center;
-  font: 500 13px 'Poppins', sans-serif; color: var(--ink); text-decoration: none;
-  border: 1px solid var(--ink); border-radius: 6px; transition: background .2s, color .2s;
-}
-.tba-btn i { color: var(--gold); margin-left: 4px; }
-.tba-btn:hover, .tba-btn:focus-visible { background: var(--ink); color: #fff; text-decoration: none; }
-.tba-btn:hover i { color: var(--gold-light); }
+.robot-tba .ion-link { margin-right: 3px; }
+/* off-season cards: video button sits right under the text, like on the robot cards */
+.robot-actions.actions-inline { margin-top: 4px; padding-top: 0; }
