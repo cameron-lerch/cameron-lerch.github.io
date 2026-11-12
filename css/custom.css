@@ -737,3 +737,4 @@ a.card-pill, a.card-pill:visited { color: var(--ink); }
 .scholar-link i { color: #aaa; font-size: 12px; }
 a.scholar-link:visited { color: var(--ink); }
 a.scholar-link:hover { border-color: var(--gold); color: var(--gold); text-decoration: none; }
+.section-title .scholar-link { margin-top: 12px; }

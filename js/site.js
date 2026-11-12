@@ -214,13 +214,19 @@
     if (!tab) return;
     var card = tab.closest('.robot-card');
     var name = tab.getAttribute('data-tab');
-    card.querySelectorAll('.card-tab').forEach(function (t) {
-      var on = t === tab;
-      t.classList.toggle('active', on);
-      t.setAttribute('aria-selected', on ? 'true' : 'false');
-    });
-    card.querySelectorAll('.card-panel').forEach(function (pnl) {
-      pnl.classList.toggle('active', pnl.getAttribute('data-panel') === name);
+    // The looping carousel keeps copies of each card and swaps between them while dragging,
+    // so apply the choice to every copy of this card (matched by data-card), not just this one.
+    var key = card.getAttribute('data-card');
+    var cards = key ? document.querySelectorAll('.robot-card[data-card="' + key + '"]') : [card];
+    Array.prototype.forEach.call(cards, function (c) {
+      c.querySelectorAll('.card-tab').forEach(function (t) {
+        var on = t.getAttribute('data-tab') === name;
+        t.classList.toggle('active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      c.querySelectorAll('.card-panel').forEach(function (pnl) {
+        pnl.classList.toggle('active', pnl.getAttribute('data-panel') === name);
+      });
     });
   });
 
