@@ -585,3 +585,23 @@ a.video-link:hover { color: var(--gold); }
   #about .div-img-bg { max-width: 340px; margin: 50px auto 40px; }
   #about .div-img-bg .about-img img { margin-left: 0; margin-top: -40px; height: 380px; }
 }
+
+/* ---------- Contact ("Let's Work Together") ---------- */
+#contact { background: #fff; }
+#contact .contact-card { background: var(--paper); box-shadow: none; }
+#contact .first-intro { margin-bottom: 32px; }
+.contact-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; max-width: 980px; margin: 0 auto 32px; text-align: left; }
+@media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; max-width: 520px; } }
+.contact-card { background: #fff; border-radius: 6px; padding: 22px; box-shadow: 0 2px 14px rgba(0,0,0,.05); }
+.contact-card i { font-size: 32px; color: var(--gold); }
+.contact-card h4 { font-family: 'Playfair Display', Georgia, serif; font-size: 19px; margin: 8px 0; }
+.contact-card p { font-size: 14px; color: #555; line-height: 1.6; margin: 0; }
+.contact-card a, .contact-card a:visited { color: var(--gold); }
+.contact-actions .button { margin: 0 6px 12px; }
+.contact-email { font-size: 14px; color: #888; margin: 4px 0 0; }
+.contact-email a, .contact-email a:visited { color: var(--gold); }
+#about .about-descr a.smoothScroll, #about .about-descr a.smoothScroll:visited { color: var(--gold); }
+
+/* "Contact Me" in the nav: outlined pill so it reads as the call to action */
+nav ul li a.nav-cta { color: var(--gold); border: 1px solid var(--gold); border-radius: 999px; padding: 6px 14px 5px; margin-top: -7px; }
+nav ul li a.nav-cta:hover { background: var(--gold); color: #fff; text-decoration: none; }
