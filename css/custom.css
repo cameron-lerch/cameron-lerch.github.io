@@ -710,3 +710,30 @@ a.card-pill, a.card-pill:visited { color: var(--ink); }
 /* larger robot photos again (4:3); caption stays on the photo */
 .first-carousel .robot-photo,
 .first-carousel .panel-visual { aspect-ratio: 4 / 3; }
+
+/* ---------- Section spacing and headings ----------
+   The template used 90px of padding above and below every section plus 70px under each heading,
+   which left large gaps between sections; headings were 25px. */
+.paddsection { padding-top: 64px; padding-bottom: 64px; }
+.section-title { margin-bottom: 40px; }
+.section-title h2 { font-size: 34px; letter-spacing: 3px; }
+.title-with-logo .title-logo { height: 64px; }
+@media (max-width: 600px) {
+  .paddsection { padding-top: 48px; padding-bottom: 48px; }
+  .section-title { margin-bottom: 28px; }
+  .section-title h2 { font-size: 26px; letter-spacing: 2px; }
+  .title-with-logo .title-logo { height: 48px; }
+}
+
+/* Google Scholar link beside the Publications heading */
+.title-with-link { display: inline-flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 10px 18px; }
+.scholar-link {
+  display: inline-flex; align-items: center; gap: 7px;
+  font: 500 13px 'Poppins', sans-serif; letter-spacing: 0; text-transform: none;
+  color: var(--ink); border: 1px solid #e2d8ca; border-radius: 999px; padding: 5px 13px 5px 9px;
+  text-decoration: none; vertical-align: middle;
+}
+.scholar-link img { width: 20px; height: 20px; }
+.scholar-link i { color: #aaa; font-size: 12px; }
+a.scholar-link:visited { color: var(--ink); }
+a.scholar-link:hover { border-color: var(--gold); color: var(--gold); text-decoration: none; }
