@@ -693,3 +693,20 @@ nav ul li a.nav-cta:hover { background: var(--gold); color: #fff; text-decoratio
 .card-panel, .card-panel * { transition: none !important; }
 .award-compact li { padding: 6px 0; }
 .first-carousel .robot-body > p.award-key { font-size: 11px; line-height: 1.4; color: #aaa; margin: 8px 0 0; }
+
+/* Pill buttons shared by every FIRST card (match the robot cards' video pills) */
+.card-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  margin: 0; padding: 4px 11px; cursor: pointer; text-decoration: none;
+  font: 500 12px 'Poppins', sans-serif; color: var(--ink);
+  border: 1px solid #e2d8ca; border-radius: 999px; background: #fff; transition: border-color .2s, color .2s;
+}
+a.card-pill, a.card-pill:visited { color: var(--ink); }
+.card-pill i { color: var(--gold); font-size: 12px; }
+.card-pill:hover, a.card-pill:hover { border-color: var(--gold); color: var(--gold); text-decoration: none; }
+.robot-actions .vid-pills { margin: 0; }
+.card-panel .robot-tba { font-size: 13px; margin: 10px 0 0; }
+
+/* larger robot photos again (4:3); caption stays on the photo */
+.first-carousel .robot-photo,
+.first-carousel .panel-visual { aspect-ratio: 4 / 3; }
