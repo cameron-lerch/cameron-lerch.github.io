@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ViamObjectReconstruction · Cameron Lerch</title>
-  <meta name="description" content="[One-sentence summary]">
+  <meta name="description" content="A Viam-controlled robot arm with a wrist-mounted RealSense depth camera circles each object on a table and fuses dozens of noisy views into a smooth, watertight 3D mesh.">
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,600|Playfair+Display:700&display=swap" rel="stylesheet">
   <link href="../lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="../css/custom.css?v=20261112q" rel="stylesheet">
-  <link href="../css/project.css?v=20261112q" rel="stylesheet">
+  <link href="../css/custom.css?v=20261112s" rel="stylesheet">
+  <link href="../css/project.css?v=20261112s" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="../images/brand/favicon-32.png">
   <link rel="apple-touch-icon" href="../images/brand/apple-touch-icon.png">
   <!-- Link previews (iMessage, Slack, LinkedIn, etc.) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Cameron Lerch">
   <meta property="og:title" content="ViamObjectReconstruction · Cameron Lerch">
-  <meta property="og:description" content="[One-sentence summary]">
+  <meta property="og:description" content="A Viam-controlled robot arm with a wrist-mounted RealSense depth camera circles each object on a table and fuses dozens of noisy views into a smooth, watertight 3D mesh.">
   <meta property="og:url" content="https://cameronlerch.com/projects/viam-object-reconstruction.html">
   <meta property="og:image" content="https://cameronlerch.com/images/brand/og-banner.jpg">
   <meta property="og:image:width" content="1200">
@@ -23,7 +23,7 @@
   <meta property="og:image:alt" content="Cameron Lerch, robotics engineer and researcher">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ViamObjectReconstruction · Cameron Lerch">
-  <meta name="twitter:description" content="[One-sentence summary]">
+  <meta name="twitter:description" content="A Viam-controlled robot arm with a wrist-mounted RealSense depth camera circles each object on a table and fuses dozens of noisy views into a smooth, watertight 3D mesh.">
   <meta name="twitter:image" content="https://cameronlerch.com/images/brand/og-banner.jpg">
   <link rel="canonical" href="https://cameronlerch.com/projects/viam-object-reconstruction.html">
 </head>
@@ -40,11 +40,11 @@
 
   <header class="project-hero">
     <div class="inner">
-      <div class="demo-tag">Personal project · Viam</div>
+      <div class="demo-tag">Personal project · Viam · 3D reconstruction</div>
       <h1>ViamObjectReconstruction</h1>
-      <p class="lede">A robot arm with a depth camera circles each object on a table and fuses the views into a smooth, watertight 3D mesh.</p>
+      <p class="lede">A Viam-controlled robot arm with a wrist-mounted depth camera finds the objects on a table, circles each one, and fuses dozens of noisy views into a smooth, watertight 3D mesh.</p>
       <div class="demo-links">
-          <a class="soon"><i class="ion-social-github"></i> Code coming soon</a>
+          <a href="https://github.com/cameron-lerch/ViamObjectReconstruction" target="_blank" rel="noopener"><i class="ion-social-github"></i> Code &amp; full write-up</a>
       </div>
     </div>
   </header>
@@ -56,28 +56,98 @@
 
     <div class="project-grid">
       <div>
-      <h2>Overview</h2>
-      <p>ViamObjectReconstruction finds the objects sitting on a table, drives a Viam-controlled robotic arm with a wrist-mounted
-              Intel RealSense depth camera around each one, and stitches the views into a 3D mesh for each object.</p>
-      <h2>Why many views</h2>
-      <p>A RealSense camera produces noisy depth data and can only see one side of an object at a time. Fusing many views, taken from
-              known arm poses all around an object, captures every side of it, and capturing several frames at each view reduces the noise
-              in the depth data.</p>
-      <h2>Results</h2>
-      <p>The result is a smooth, watertight 3D mesh of each object on the table.</p>
-      <!-- TODO(cameron): pipeline details (detection, view planning, fusion method, Viam services) once the code is public -->
+      <h2>The question</h2>
+      <p><i>Is it possible to accurately produce a 3D mesh of an object using a noisy sensor?</i> Depth from an Intel RealSense camera is noisy,
+              and from any one position it only sees one side of an object. That makes it hard to use directly for object reconstruction, path
+              planning, or grasp planning. My goal was to find out whether fusing many views, taken from known arm poses all around an object,
+              could turn that noisy data into smooth, accurate meshes.</p>
+
+      <h2>Results at a glance</h2>
+      <ul>
+              <li><b>Smooth surfaces from a noisy camera:</b> fusing about 50 views takes the surface from 0.26–0.27&nbsp;mm of roughness in a single
+                  raw view to 0.04–0.08&nbsp;mm in the final meshes.</li>
+              <li><b>About 16 views see everything the camera can reach:</b> from there on, 85–86% of a block's or cylinder's watertight mesh is
+                  measured; the rest is the bottom, which no view can see.</li>
+              <li><b>Accurate heights and 3D-printed objects:</b> heights within about 1&nbsp;mm of calipers, the printed block within about 1&nbsp;mm
+                  of its true size, and the bowl's measured surface within 0.71&nbsp;mm of its CAD model (median).</li>
+              <li><b>Eight objects scanned:</b> a toy block and cylinder measured with calipers, three 3D-printed objects with CAD models (block,
+                  sphere, bowl), and a pumpkin, a mug, and a cup.</li>
+              <li><b>The open problem is width:</b> the toy block and cylinder come out 4–5&nbsp;mm too wide. Calibration and flat-surface depth are
+                  good to well under a millimeter, which points to how the RealSense measures walls and edges.</li>
+            </ul>
+
+      <h2>How it works</h2>
+      <p>The scanner works in two halves. One drives the arm and saves everything the camera sees; the other builds the meshes from those
+              saved views, offline, so the same scan can be rebuilt with different settings and compared directly.</p>
+      <h3>On the robot</h3>
+      <ul>
+              <li><b>Survey:</b> look straight down across the table, follow it to its edges, and find each object, the obstacles around it,
+                  and the calibration mat.</li>
+              <li><b>Plan:</b> lay out up to 61 camera viewpoints around each object (a top view and five rings), and check every one with
+                  Viam's motion planner in plan-only mode, so reachability and collisions are verified without moving the arm.</li>
+              <li><b>Capture:</b> stop at each reachable view, let the arm settle, and save the color image, the per-pixel median of several
+                  depth frames, and the camera's pose.</li>
+            </ul>
+      <h3>Offline</h3>
+      <ul>
+              <li><b>Place every view in the world</b> through a calibrated camera mount, then refine all of the views together with a joint
+                  point-to-plane ICP.</li>
+              <li><b>Fuse</b> the views in a TSDF with 1.5&nbsp;mm voxels, keeping only surface that at least two views measured.</li>
+              <li><b>Close</b> the mesh: fill in the bottom and any walls no view could reach with Poisson reconstruction, giving one watertight mesh.</li>
+              <li><b>Smooth</b> with HC Laplacian smoothing, which removes ripple without noticeably shrinking the mesh.</li>
+            </ul>
+
+      <h2>Engineering highlights</h2>
+      <ul>
+              <li><b>Camera calibration, two independent ways.</b> The hand-measured camera mount was 21&nbsp;mm and 2.2° off. I calibrated it
+                  from scan data alone and, separately, from a ChArUco board; the two agree to 4.7&nbsp;mm and 0.5°, and flat-surface depth checks
+                  out to about half a millimeter.</li>
+              <li><b>Joint alignment with an arm-pose prior.</b> A Gauss-Newton solve finds every view's correction at once, with a prior based on
+                  the arm's expected accuracy so symmetric objects (like a cylinder spinning about its axis) don't drift. On the orange block it
+                  cuts the views' median disagreement from 0.95&nbsp;mm to 0.58&nbsp;mm.</li>
+              <li><b>Planning for coverage before moving.</b> A coverage estimate over ~350 surface directions tells the planner, before the arm
+                  moves, whether the reachable views will see the whole object.</li>
+              <li><b>Measured against ground truth.</b> Every choice was compared on real scans against caliper measurements and CAD models,
+                  with metrics for roughness, measured vs. filled-in surface, volume, and accuracy.</li>
+              <li><b>Safe on a shared arm:</b> frames are only accepted if the robot stamped them after the arm settled, and every pose is checked
+                  against the arm controller.</li>
+            </ul>
+
+      <h2>What's next</h2>
+      <ul>
+              <li>Closing the 4–5&nbsp;mm width gap with better depth processing before fusion.</li>
+              <li>Choosing the next best view on the fly instead of a fixed layout.</li>
+              <li>Packaging the scanner as a Viam module other developers can use, and comparing the RealSense against an Orbbec Astra&nbsp;2.</li>
+            </ul>
+      <p>The <a href="https://github.com/cameron-lerch/ViamObjectReconstruction" target="_blank" rel="noopener">full write-up on GitHub</a> covers the methodology, tuning experiments,
+              design decisions, what didn't work, and setup instructions.</p>
       </div>
       <aside class="project-facts">
-      <h3>Platform</h3><p>Viam · robotic arm · wrist-mounted Intel RealSense depth camera</p>
-      <h3>Tools</h3><p><span class="todo">[Languages / libraries]</span></p>
-      <h3>Status</h3><p>In progress: repository going public soon</p>
+      <h3>Hardware</h3><p>UFactory 850 arm · Intel RealSense D435 on the wrist (1280 × 720)</p>
+      <h3>Platform</h3><p>Viam: arm, camera, and motion services</p>
+      <h3>Tools</h3><p>Python · Viam SDK · Open3D · PyMeshLab · NumPy · SciPy · OpenCV (ChArUco)</p>
+      <h3>Methods</h3><p>View planning · camera calibration · joint ICP · TSDF fusion · Poisson reconstruction · mesh smoothing</p>
+      <h3>Code</h3><p><a href="https://github.com/cameron-lerch/ViamObjectReconstruction" target="_blank" rel="noopener">cameron-lerch/ViamObjectReconstruction</a></p>
       </aside>
     </div>
 
       <h2>Gallery</h2>
-      <!-- Add images as <figure><img src="../images/projects/..."><figcaption>...</figcaption></figure> -->
       <div class="gallery">
-        <figure><img src="../images/projects/object-reconstruction.gif" alt="Scanning a green cylinder view by view: color image, cumulative point cloud, and the resulting 3D mesh" loading="lazy"><figcaption>Scanning a green cylinder, view by view</figcaption></figure>
+        <figure><img src="https://raw.githubusercontent.com/cameron-lerch/ViamObjectReconstruction/main/media/images/recon_header1.jpg" alt="The setup: a UFactory 850 arm with a wrist-mounted RealSense camera above the table and calibration mat" loading="lazy"><figcaption>The setup: a UFactory 850 arm with a wrist-mounted RealSense camera above the table and calibration mat</figcaption></figure>
+        <figure><img src="https://raw.githubusercontent.com/cameron-lerch/ViamObjectReconstruction/main/media/images/recon_header2.jpg" alt="The RealSense camera on its bracket under the gripper" loading="lazy"><figcaption>The RealSense camera on its bracket under the gripper</figcaption></figure>
+        <figure><img src="https://raw.githubusercontent.com/cameron-lerch/ViamObjectReconstruction/main/media/images/progression_vid_bowl.gif" alt="A 3D-printed bowl’s full scan (46 views), played back view by view" loading="lazy"><figcaption>A 3D-printed bowl’s full scan (46 views), played back view by view</figcaption></figure>
+        <figure><img src="../images/projects/object-reconstruction.gif" alt="Scanning a green cylinder view by view" loading="lazy"><figcaption>Scanning a green cylinder, view by view</figcaption></figure>
+        <figure><img src="https://raw.githubusercontent.com/cameron-lerch/ViamObjectReconstruction/main/media/images/objects/orange_block.png" alt="Orange block: color view, fused point cloud, and final mesh" loading="lazy"><figcaption>Orange block: color view, fused point cloud, and final mesh</figcaption></figure>
+        <figure><img src="https://raw.githubusercontent.com/cameron-lerch/ViamObjectReconstruction/main/media/images/objects/printed_bowl.png" alt="3D-printed bowl: within 0.71 mm of its CAD model (median)" loading="lazy"><figcaption>3D-printed bowl: within 0.71 mm of its CAD model (median)</figcaption></figure>
+        <figure><img src="https://raw.githubusercontent.com/cameron-lerch/ViamObjectReconstruction/main/media/images/objects/pumpkin.png" alt="Pumpkin: color view, fused point cloud, and final mesh" loading="lazy"><figcaption>Pumpkin: color view, fused point cloud, and final mesh</figcaption></figure>
+        <figure><img src="https://raw.githubusercontent.com/cameron-lerch/ViamObjectReconstruction/main/media/images/objects/mug.png" alt="Mug: color view, fused point cloud, and final mesh" loading="lazy"><figcaption>Mug: color view, fused point cloud, and final mesh</figcaption></figure>
+        <figure><img src="https://raw.githubusercontent.com/cameron-lerch/ViamObjectReconstruction/main/media/diagrams/pipeline.png" alt="The pipeline: survey, plan, and capture on the robot; calibrate, align, fuse, and close offline" loading="lazy"><figcaption>The pipeline: survey, plan, and capture on the robot; calibrate, align, fuse, and close offline</figcaption></figure>
+        <figure><img src="https://raw.githubusercontent.com/cameron-lerch/ViamObjectReconstruction/main/media/diagrams/view_planning.png" alt="View planning: a top view and five rings of camera poses around each object" loading="lazy"><figcaption>View planning: a top view and five rings of camera poses around each object</figcaption></figure>
+        <figure><img src="https://raw.githubusercontent.com/cameron-lerch/ViamObjectReconstruction/main/media/diagrams/coverage.png" alt="Coverage: which surface directions the reachable views can see" loading="lazy"><figcaption>Coverage: which surface directions the reachable views can see</figcaption></figure>
+        <figure><img src="https://raw.githubusercontent.com/cameron-lerch/ViamObjectReconstruction/main/media/diagrams/tsdf_fusion.png" alt="TSDF fusion: averaging every view’s signed distances into one surface" loading="lazy"><figcaption>TSDF fusion: averaging every view’s signed distances into one surface</figcaption></figure>
+        <figure><img src="https://raw.githubusercontent.com/cameron-lerch/ViamObjectReconstruction/main/media/images/calibration_before_after.png" alt="Camera calibration, before and after" loading="lazy"><figcaption>Camera calibration, before and after</figcaption></figure>
+        <figure><img src="https://raw.githubusercontent.com/cameron-lerch/ViamObjectReconstruction/main/media/images/alignment_before_after.png" alt="View alignment (joint ICP), before and after" loading="lazy"><figcaption>View alignment (joint ICP), before and after</figcaption></figure>
+        <figure><img src="https://raw.githubusercontent.com/cameron-lerch/ViamObjectReconstruction/main/media/images/live_viewer.png" alt="The live browser viewer: mesh, point cloud, and camera images during a scan" loading="lazy"><figcaption>The live browser viewer: mesh, point cloud, and camera images during a scan</figcaption></figure>
       </div>
   </main>
 
@@ -86,6 +156,6 @@
     <a href="mailto:cameron.lerch@gmail.com">cameron.lerch@gmail.com</a>
   </footer>
 
-  <script src="../js/site.js?v=20261112q"></script>
+  <script src="../js/site.js?v=20261112s"></script>
 </body>
 </html>

@@ -757,3 +757,4 @@ a.scholar-link:hover { border-color: var(--gold); color: var(--gold); text-decor
 .robot-tba .ion-link { margin-right: 3px; }
 /* off-season cards: video button sits right under the text, like on the robot cards */
 .robot-actions.actions-inline { margin-top: 4px; padding-top: 0; }
+.demo-media > img.pos-top { object-position: top; }
