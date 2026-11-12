@@ -33,18 +33,27 @@
     });
   }
 
-  document.querySelectorAll('[data-modal]').forEach(function (el) {
-    el.addEventListener('click', function (e) {
-      // the "Details" link on an Experience tile goes to its page instead of opening the pop-up
-      if (e.target.closest && e.target.closest('.tile-details')) return;
-      openModal(el.getAttribute('data-modal'), el);
-    });
-    el.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openModal(el.getAttribute('data-modal'), el);
-      }
-    });
+  // Delegated, so it also works on the copies a looping carousel makes of each card.
+  function modalTrigger(e) {
+    var el = e.target.closest ? e.target.closest('[data-modal]') : null;
+    if (!el) return null;
+    // the "Details" link on an Experience tile goes to its page instead of opening the pop-up
+    if (e.target.closest('.tile-details')) return null;
+    return el;
+  }
+  document.addEventListener('click', function (e) {
+    var el = modalTrigger(e);
+    if (!el) return;
+    e.preventDefault();
+    openModal(el.getAttribute('data-modal'), el);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    var el = modalTrigger(e);
+    // native buttons and links already turn Enter/Space into a click
+    if (!el || el.tagName === 'BUTTON' || el.tagName === 'A') return;
+    e.preventDefault();
+    openModal(el.getAttribute('data-modal'), el);
   });
 
   document.querySelectorAll('.modal').forEach(function (modal) {
@@ -81,7 +90,8 @@
     if (!videoModal) return;
     videoModal.style.display = 'none';
     videoModal.querySelector('.demo-media').innerHTML = '';
-    document.body.style.overflow = '';
+    // keep the page locked if a pop-up (e.g. a season's details) is still open underneath
+    if (!openModals().length) document.body.style.overflow = '';
     if (lastTrigger) lastTrigger.focus();
   }
 
@@ -194,6 +204,25 @@
       $fc.trigger(leftSide ? 'prev.owl.carousel' : 'next.owl.carousel');
     }, true);
   }
+
+  // ---------------------------------------------------------------------
+  // Card tabs (FIRST robot cards): Results / My Contribution.
+  // Delegated so it also works on the carousel's copies of each card.
+  // ---------------------------------------------------------------------
+  document.addEventListener('click', function (e) {
+    var tab = e.target.closest ? e.target.closest('.card-tab') : null;
+    if (!tab) return;
+    var card = tab.closest('.robot-card');
+    var name = tab.getAttribute('data-tab');
+    card.querySelectorAll('.card-tab').forEach(function (t) {
+      var on = t === tab;
+      t.classList.toggle('active', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    card.querySelectorAll('.card-panel').forEach(function (pnl) {
+      pnl.classList.toggle('active', pnl.getAttribute('data-panel') === name);
+    });
+  });
 
   // ---------------------------------------------------------------------
   // Demo media: <div class="demo-media" data-youtube="VIDEO_ID">
