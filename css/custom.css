@@ -739,3 +739,27 @@ a.scholar-link:visited { color: var(--ink); }
 a.scholar-link:hover { border-color: var(--gold); color: var(--gold); text-decoration: none; }
 .section-title .scholar-link { margin-top: 12px; }
 .first-carousel .robot-body > ul.robot-list { margin-bottom: 8px; }
+
+/* Video buttons on the FIRST cards: filled so they stand out */
+.video-link.vid-pill {
+  background: #f6efe4; border: 1px solid var(--gold); color: var(--ink);
+  padding: 4px 13px 4px 4px; font-size: 12.5px; gap: 7px;
+}
+.vid-pill .pill-play {
+  width: 22px; height: 22px; border-radius: 50%; background: var(--gold);
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.video-link.vid-pill .pill-play i { color: #fff; font-size: 10px; margin-left: 2px; }
+.video-link.vid-pill:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
+.video-link.vid-pill:hover .pill-play { background: #fff; }
+.video-link.vid-pill:hover .pill-play i { color: var(--gold); }
+
+/* The Blue Alliance link: a clear full-width button */
+.tba-btn, .tba-btn:visited {
+  display: block; margin-top: 12px; padding: 8px 12px; text-align: center;
+  font: 500 13px 'Poppins', sans-serif; color: var(--ink); text-decoration: none;
+  border: 1px solid var(--ink); border-radius: 6px; transition: background .2s, color .2s;
+}
+.tba-btn i { color: var(--gold); margin-left: 4px; }
+.tba-btn:hover, .tba-btn:focus-visible { background: var(--ink); color: #fff; text-decoration: none; }
+.tba-btn:hover i { color: var(--gold-light); }
