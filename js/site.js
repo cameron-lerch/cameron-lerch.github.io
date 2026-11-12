@@ -105,7 +105,7 @@
         '<div class="modal-content">' +
         '<span class="close" role="button" tabindex="0" aria-label="Close">&times;</span>' +
         '<div class="demo-media"></div>' +
-        '<a class="video-yt-link" target="_blank" rel="noopener">Video not playing? Watch on YouTube <i class="ion-android-open"></i></a></div>';
+        '<a class="video-yt-link" target="_blank" rel="noopener">Video not playing? Watch on YouTube</a></div>';
       document.body.appendChild(videoModal);
       var x = videoModal.querySelector('.close');
       x.addEventListener('click', closeVideoModal);
